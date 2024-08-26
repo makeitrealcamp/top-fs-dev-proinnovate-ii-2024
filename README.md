@@ -7,8 +7,10 @@
 
 ## Estudiantes 👩🏻‍💻🧑🏼‍💻
 
+
 - **Sebastian Marat Urdanegui Bisalaya** - <a href="https://github.com/SebastianUrdaneguiBisalaya?tab=repositories">GitHub</a> | <a href="https://www.linkedin.com/in/sebastianurdaneguibisalaya/">LinkedIn</a> | <a href="https://sebastianurdanegui.vercel.app/">Landing Page</a>
 - [Leslie Zarate](./profiles/example-perfil-estudiante.md)
+- Estudiante 1
 - Estudiante 2
 - Estudiante 3
 - ...
