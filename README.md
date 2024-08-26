@@ -7,7 +7,7 @@
 
 ## Estudiantes 👩🏻‍💻🧑🏼‍💻
 
-- [Max Antony] (/profiles/max-antony.md)
+- [Max Antony](/profiles/max-antony.md)
 - Estudiante 2
 - Estudiante 3
 - ...
