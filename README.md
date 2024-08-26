@@ -11,6 +11,11 @@
 - Estudiante 2
 - Estudiante 3
 - ...
+-
+-
+-
+-
+- [Alexandra Ríos Castro](https://github.com/alexamibco/top-fs-dev-proinnovate-ii-2024/blob/branch-1/profiles/example-perfil-estudiante.md)
 
 ## Como es un dia de estudio durante el programa TOP?
 
