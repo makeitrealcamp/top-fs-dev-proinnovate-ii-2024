@@ -1,12 +1,10 @@
-# Leslie Zarate 
-- Departamento: Puno
-- Ocupación: Ingeniera de Sistemas 
-- Universidad: Universidad Nacional del Altiplano
-- Hobbies: Ver Peliculas de Terror Accion, Practicar Fronton
+# SHYMMY W. GARCIA	
+
+Cuentanos algo sobre ti que te gustara todos conocieramos: Quien eres? que te gusta hacer? De donde eres?
 
 ## Perfiles sociales
 
-- [Github](https://github.com/LeslieZT)
+- [Github](https://github.com/makeitrealcamp/)
 - [Linkedin](https://www.linkedin.com/company/make-it-real-camp/)
 - [Website](https://gogole.com/)
 
@@ -14,8 +12,8 @@
 
 > En una escala de 1 a 5 como te sientes tecnicamente en esto temas: ⭐️⭐️⭐️⭐️⭐️
 
-- Programacion: ⭐️⭐️⭐️
-- Javascript: ⭐️⭐️⭐️⭐️
-- CSS: ⭐️⭐️
-- HTML: ⭐️⭐️⭐️
-- Git: ⭐️⭐️⭐️
+- Programacion: ⭐️
+- Javascript: ⭐️
+- CSS: ⭐️
+- HTML: ⭐️
+- Git: ⭐️

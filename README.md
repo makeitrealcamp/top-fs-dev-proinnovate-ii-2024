@@ -7,7 +7,7 @@
 
 ## Estudiantes 👩🏻‍💻🧑🏼‍💻
 
-- [Leslie Zarate](./profiles/example-perfil-estudiante.md)
+- Estudiante 1
 - Estudiante 2
 - Estudiante 3
 - ...
