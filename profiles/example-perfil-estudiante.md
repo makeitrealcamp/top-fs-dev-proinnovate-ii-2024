@@ -16,4 +16,4 @@ Cuentanos algo sobre ti que te gustara todos conocieramos: Quien eres? que te gu
 - Javascript: ⭐️
 - CSS: ⭐️
 - HTML: ⭐️
-- Git: ⭐️   
+- Git: ⭐️
