@@ -10,7 +10,7 @@
 
 - [Max Antony](/profiles/max-antony.md)
 - **Sebastian Marat Urdanegui Bisalaya** - <a href="https://github.com/SebastianUrdaneguiBisalaya?tab=repositories">GitHub</a> | <a href="https://www.linkedin.com/in/sebastianurdaneguibisalaya/">LinkedIn</a> | <a href="https://sebastianurdanegui.vercel.app/">Landing Page</a>
-- [Leslie Zarate](./profiles/example-perfil-estudiante.md)
+- [Leslie Zarate](./profiles/leslie-zarate.md)
 - Estudiante 1
 - Estudiante 2
 - Estudiante 3
