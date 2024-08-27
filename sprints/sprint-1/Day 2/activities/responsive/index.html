@@ -4,35 +4,81 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <!-- add css file -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
+  <div class="main">
+  <aside class="information-container">
+    <div class="contact-container"> 
+      <div class="email">
+          <img src="./img/message.svg" alt="email">
+          <p>stitchgym@gmail.com</p>
+      </div>
+      <div class="phone">
+        <img src="./img/call.svg" alt="phone">
+        <p>Call us: +84 1985 33 999</p>
+      </div>
+      <div class="date">
+        <img src="./img/Clock.svg" alt="clock">
+        <p>Opening hours: Mon - Sat: 8:00am To 9:00pm</p>
+      </div>
+    </div>
 
-  <div id="hero">
+    <div class="social-container">
+      <img src="./img/Facebook.svg" alt="facebook">
+      <img src="./img/Twitter.svg" alt="twitter">
+      <img src="./img/Instagram.svg" alt="instagram">
+    </div>
+  </aside>
+  <nav class="nav-bar">
+    <figure class="brand-container">
+      <img src="./img/logo.svg" alt="logo">
+      <h1>Stitch Gym</h1>
+    </figure>
+    <div class="hamburger-container">
+       <img src="./img/bars.svg" alt="hamburger">
+    </div>
+    <div class="right-container">
+
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li><span>Services</span> <img src="./img/down arrow.svg" alt="down-arrow"></li>
+        <li><span>Classes</span><img src="./img/down arrow.svg" alt="down-arrow"></li></li>
+        <li>Blog</li>
+      </ul>
+      <button type="button"><span class="button-text">Join Us Today</span></button>
+    </div>
+
+  </nav>
+  <section id="hero">
     <div class="container">
       <div class="content">
-        <div class="topper">Best Gym Of The City For Fitness</div>
-        <div class="title">You Can Boost Your Strength</div>
-        <div class="text">
+        <h3 class="topper">BEST GYM OF THE CITY FOR FITNESS</h3>
+        <h2 class="title"><span class="line1-media">You Can Boost</span><span class="line2-media">Your Strength</span><span class="line1">You Can</span> <span class="line2">Boost Your</span> <span class="line3">Strength</span></h2>
+        <p class="text">
           Develop confidence, composure under pressure and the discipline needed to be a champ. This is the club you’ve
           been looking for.
-        </div>
-        <div class="button-group">
-          <a href="" class="button-solid ">Read More</a>
-        </div>
+        </p>
+        
       </div>
+      <button class="button-group">
+        Get Started
+      </button>
     </div>
 
 
  
-<img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/gym-hero.png" alt="">
+    <img class="background" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/gym-hero.png" alt="">
 
     <img class="graphic" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-splatter2.svg"
       alt="graphic" height="161" width="1920" loading="lazy" decoding="async">
 
-  </div>
-
+  </section>
+</div>
 </body>
 
 </html>
