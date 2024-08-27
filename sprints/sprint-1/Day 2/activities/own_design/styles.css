@@ -247,6 +247,11 @@
     .main{
         padding: 100px 220px 200px 220px;
     }
+    .text-container{
+        width: 1280px;
+        height: 82px;
+        justify-content: space-between;
+    }
     .feature-container{
         width: 349px;
     }
@@ -259,7 +264,7 @@
     }
     .card-container{
         height: 100%;
-        width: 303.67px;
+        width: 311.67px;
     }
     .card{
         height: 399px;
