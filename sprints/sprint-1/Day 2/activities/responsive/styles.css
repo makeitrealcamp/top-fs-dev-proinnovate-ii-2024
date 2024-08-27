@@ -1,147 +1,108 @@
-
-.topper {
-  font-size: 16px;
-  line-height: 1.2em;
-  text-transform: uppercase;
-  text-align: inherit;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  color: #ff6a3e;
-  margin-bottom: 0.25rem;
-  display: block;
-}
-
-.title {
-  font-size: 49px;
-  font-weight: 900;
-  line-height: 1.2em;
-  text-align: inherit;
-  max-width: 43.75rem;
-  margin: 0 0 1rem 0;
-  color: #1a1a1a;
-  position: relative;
-}
-
-.text {
-  font-size: 16px;
-  line-height: 1.5em;
-  text-align: inherit;
-  width: 100%;
-  max-width: 40.625rem;
+body {
   margin: 0;
-  color: #4e4b66;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 #hero {
-  padding: 300px;
-  overflow: hidden;
   position: relative;
-  z-index: 1;
+  width: 100vw;
+  height: 100vh;
 }
-#hero .container {
-  width: 100%;
-  max-width: 80rem;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-}
-#hero .content {
-  text-align: center;
-  width: 100%;
-  max-width: 46.875rem;
-}
-#hero .title {
-  font-size: 84px;
-}
-#hero .title,
-#hero .text {
-  color: #fafbfc;
-}
-#hero .text {
-  margin-bottom: 2rem;
-}
-#hero .button-group {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-#hero .button-solid {
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 56px;
-  text-align: center;
-  text-decoration: none;
-  min-width: 12.5rem;
-  margin: 0;
-  box-sizing: border-box;
-  padding: 0 1.5rem;
-  background-color: #ff6a3e;
-  color: #fafbfc;
-  border-radius: 0.25rem;
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-}
-#hero .button-solid:before {
+
+#hero::before {
   content: "";
-  width: 0%;
-  height: 100%;
-  background: #000;
-  opacity: 1;
-  border-radius: 0.25rem;
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: width 0.3s;
-}
-#hero .button-solid:hover:before {
   width: 100%;
+  height: 100%;
+  background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/gym-hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
-#hero .graphic {
-  width: 100%;
-  min-width: 120rem;
-  height: auto;
-  object-fit: cover;
+
+#hero::after {
+  content: "";
   position: absolute;
   bottom: 0;
-  left: 50%;
-  z-index: 0;
-  transform: translateX(-50%);
+  background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-splatter2.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 200px;
 }
 
-#hero .background {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -2;
+.container {
+  position: relative;
+  color: white;
 }
-#hero .background:before {
 
-  content: "";
+.container .content {
+  text-align: center;
+}
+
+.container .content .topper {
+  color: red;
+}
+
+.button-group {
+  background-color: red;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+}
+
+.button-solid {
+  text-decoration: none;
+  color: white;
+}
+
+#hero-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+#hero-nav__social {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+#hero-nav__menu {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+/* 
+#hero {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: #000;
-  pointer-events: none;
-  opacity: 0.7;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
 }
-#hero .background img {
-  width: 100%;
+
+#hero > .container {
+  position: absolute;
+}
+
+#hero img {
+  position: fixed;
+  top: 30%;
+  left: 70%;
+  transform: translate(-70%, -30%);
+  width: fit-content;
   height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
+
+#hero img:last-child {
+  bottom: 0;
+  height: 500px;
+}
+ */
+/* #hero img {
+  width: 100%;
+  position: absolute;
+} */
