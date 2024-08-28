@@ -1,0 +1,17 @@
+// @import 'variables';
+
+@use './shared/breakpoints' as bp;
+@use './components/card';
+@use './components/button';
+
+.responsive {
+  @include bp.xs {
+    background-color: red;
+  }
+  @include bp.sm {
+    background-color: blue;
+  }
+  @include bp.md {
+    background-color: green;
+  }
+}

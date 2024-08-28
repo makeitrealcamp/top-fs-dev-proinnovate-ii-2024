@@ -1,0 +1,21 @@
+@use '../shared/variables' as variables;
+
+@mixin btn-base {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  padding: variables.$spacing-medium variables.$spacing-large;
+}
+
+.btn {
+  @include btn-base;
+  background-color: variables.$color-primary;
+}
+
+.btn--outline {
+    @include btn-base;
+  background-color: transparent;
+  border: 2px solid variables.$color-primary;
+  color: variables.$color-primary;
+}
