@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'pricing';
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .pricing__container {
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .pricing__features {
+        width: 30%;
+        display: flex;
+    }
+
+}
