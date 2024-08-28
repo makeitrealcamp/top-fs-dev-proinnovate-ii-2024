@@ -1,0 +1,41 @@
+@use '../shared/variables' as variables;
+@use '../components/button' as button; 
+
+.card {
+    background-color: variables.$color-card-bg;
+    border: 1px solid  variables.$color-card-border;
+    // border-radius: rem(8px);
+    padding:  variables.$spacing-medium;
+
+    text-align: center;
+  
+    &__title {
+    
+      font-weight: bold;
+      color:  variables.$color-text-primary;
+      margin-bottom:  variables.$spacing-small;
+    }
+  
+    &__description {
+      font-size:  variables.$font-size-base;
+      color:  variables.$color-text-secondary;
+      margin-bottom:  variables.$spacing-medium;
+    }
+  
+    &__button {
+      @include button.btn-base;
+    //   display: inline-block;
+    // //   padding: rem(10px) rem(20px);
+      background-color: variables.$color-primary;
+      color: #fff;
+
+    // //   border-radius: rem(4px);
+    
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color:  variables.$color-text-primary;
+        // background-color: darken($color-primary, 10%);
+      }
+    }
+  }

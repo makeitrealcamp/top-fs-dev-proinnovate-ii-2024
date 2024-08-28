@@ -1,3 +1,0 @@
-This is a new line in test 2
-This is a new line in test in main branch
-Second line modified in sprint 1 "
