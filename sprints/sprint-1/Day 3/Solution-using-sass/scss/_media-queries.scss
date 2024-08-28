@@ -1,19 +1,22 @@
-@import 'variables';
-@import 'pricing';
+$size-screen:(
+    table: 48rem,
+    desktop:64rem
+);
 
 /* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-    .pricing__container {
-        gap: clamp(3rem, 6vw, 4rem);
+@mixin tablet {
+    @media only screen and (min-width: map-get($size-screen, table)) {
+        @content
+        
+    
     }
-
-}
+    
+};
 
 /* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    .pricing__features {
-        width: 30%;
-        display: flex;
+@mixin desktop{
+    @media only screen and (min-width: map-get($size-screen, desktop)) {
+        @content
     }
-
 }
+

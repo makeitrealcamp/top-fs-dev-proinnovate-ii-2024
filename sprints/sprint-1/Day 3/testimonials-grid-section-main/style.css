@@ -1,0 +1,141 @@
+/* Variables System Design */
+:root {
+    --primary-moderate-violet: hsl(263, 55%, 52%);
+    --primary-grayish-blue: hsl(217, 19%, 35%);
+    --primary-blackish-blue: hsl(219, 29%, 14%);
+    --primary-white:hsl(0, 0%, 100%);
+    --neutral-light-gray: hsl(0, 0%, 81%);
+    --neutral-blue-gray:  hsl(210, 46%, 95%);
+    /* font-size */
+    --font-size : 1.3rem;
+    --font-size-paragraph:0.8rem;
+    --font-size-heading: 0.5rem
+}
+/* Reseteamos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+  button{
+    cursor: pointer;
+    text-decoration: none;
+    border: 0;
+  }
+  body{
+    font-family: "Barlow Semi Condensed", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    padding: 1.5rem 0.8rem;
+    background-color: var(--neutral-light-gray);
+  }
+
+  .main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    
+    
+  }
+  .grid-container{
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 0.5fr 0.8fr 1fr;
+    gap: 15px;
+    width: 90%;
+  }
+  /* Card Style */
+  .grid-item-card{
+    padding: 1.8rem;
+    background-color: var(--primary-white);
+    display: grid;
+    grid-template-rows: 40px auto;
+    gap: 15px;
+    border-radius: 10px;
+    
+  }
+  .card1{
+    background-color: var(--primary-moderate-violet);
+    position:relative
+  }
+  .quoates{
+    position: absolute;
+    left: 60%;
+    z-index: 1;
+  }
+  .card2{
+    background-color: var(--primary-grayish-blue);
+  }
+  .card3{
+    background-color: var(--primary-blackish-blue);
+  }
+.text-heading-container{
+    display: flex;
+    gap: 20px;
+}
+.text-heading-container img{
+    border-radius: 50%;
+}
+.text-heading h3{
+    color: var(--primary-grayish-blue);
+}
+.text-heading p{
+    color: var(--primary-grayish-blue);
+    opacity: 0.5;
+}
+.card1 .text-heading h3,.card2 .text-heading h3,.card3 .text-heading h3{
+    color: var(--neutral-blue-gray);
+}
+.card1 .text-heading p,.card2 .text-heading p,.card3 .text-heading p{
+    color: var(--neutral-blue-gray);
+}
+.text-paragraph{
+    color: var(--primary-grayish-blue);
+    opacity: 0.7;
+    font-size: var(--font-size-paragraph);
+}
+.card1 .text-paragraph ,.card2 .text-paragraph ,.card3 .text-paragraph {
+    color: var(--neutral-blue-gray);
+}
+
+.text-description{
+    z-index: 2;
+    font-size: var(--font-size);
+    font-weight: 500;
+}
+.card1 .text-description,.card2 .text-description,.card3 .text-description{
+    color: var(--primary-white);
+}
+.attribution{
+    margin-top: 20px;
+}
+@media only screen and (min-width:1000px){
+    .main{
+        padding: 100px 90px;
+    }
+    .grid-container{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);;
+    }
+    .item1{
+        grid-column: 1 / 3;
+        grid-row: 1; 
+    }
+    .item2{
+        grid-column: 3 / 4;
+        grid-row: 1;
+    }
+    .item3{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .item4{
+        grid-column: 2/4;
+        grid-row: 2;
+    }
+    .item5{
+        grid-column: 4/ 5;
+        grid-row: 1/3;
+    }
+}

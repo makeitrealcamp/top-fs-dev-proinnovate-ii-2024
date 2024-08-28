@@ -1,4 +1,5 @@
-@import 'variables';
+@use '../shared/variables';
+@use '../media-queries';
 
 .pricing {
     padding: var(--spacing-section-padding);
@@ -7,4 +8,84 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+}
+.pricing__content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    @include media-queries.tablet(){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+.pricing__container {
+    @include media-queries.tablet(){
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+}
+
+.pricing__features {
+    width: 100%;
+    margin: var(--spacing-gap-large) 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-gap-small);
+    @include media-queries.tablet(){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: stretch;
+    }
+    @include media-queries.desktop(){
+        width: 30%;
+        display: flex;
+    }
+}
+.pricing__feature {
+    font-size: var(--font-size-body);
+    list-style: none;
+    line-height: 1.5em;
+    width: 100%;
+    max-width: 21.8125rem;
+    color: var(--color-body-text);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+.pricing__topper {
+    font-size: var(--font-size-topper);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+.pricing__wrapper {
+    width: 100%;
+    max-width: 80rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include media-queries.desktop(){
+        flex-direction: row;
+        gap: 1.25rem;
+    }
+}
+.pricing__graphic {
+    width: 100%;
+    min-width: 120rem;
+    height: auto;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    z-index: -1;
 }
