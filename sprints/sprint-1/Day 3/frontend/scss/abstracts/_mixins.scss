@@ -1,0 +1,16 @@
+@mixin flex-center($gap: 1rem) {
+  display: flex;
+  gap: $gap;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+@mixin responsive-font-size($size) {
+  font-size: $size;
+
+  @media (min-width: 768px) {
+    font-size: $size * 1.2;
+  }
+}
