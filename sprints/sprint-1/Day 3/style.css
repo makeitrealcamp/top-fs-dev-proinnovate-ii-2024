@@ -1,0 +1,35 @@
+:root {
+    --color-dark-blackish-blue: hsl(219, 29%, 14%);
+    --color-bg: bisque;
+    --color-bg-light: hsl(240, 3%, 93%);
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
+.flex {
+    display: flex;
+}
+.row {
+    flex-direction: row;
+}
+.col {
+    flex-direction: column;
+}
+.bg-light {
+    background-color: var(--color-bg-light);
+}
+
+.bg-dark {
+    background-color: var(--color-dark-blackish-blue);
+}
+.border {
+    border: 1px solid var(--color-dark-blackish-blue);
+}
+.h-12 {
+    height: 12rem;
+}
+.w-12 {
+    width: 12rem;
+}
