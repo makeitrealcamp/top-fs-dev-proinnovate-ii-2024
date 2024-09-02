@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-@use '../shared/variables';
-@use '../media-queries';
-=======
 
->>>>>>> 04f919f075bc484d36e0802c89010b1014d14b81
 .pricing__plans {
     width: 100%;
     max-width: 57rem;
@@ -12,16 +7,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
-    @include media-queries.tablet(){
-        flex-direction: row;
-        align-items: stretch;
-    }
-    @include media-queries.desktop(){
-        margin: 0;
-    }
-=======
->>>>>>> 04f919f075bc484d36e0802c89010b1014d14b81
 }
 
 .pricing__plan {
@@ -38,27 +23,12 @@
     align-items: center;
     position: relative;
     color: var(--color-body-text);
-<<<<<<< HEAD
-    @include media-queries.tablet(){
-        margin: 1.5rem 0;
-    }
-    @include media-queries.desktop(){
-        min-height: 25rem;
-    }
-=======
->>>>>>> 04f919f075bc484d36e0802c89010b1014d14b81
 }
 
 .pricing__plan--popular {
     background-color: var(--color-text-dark);
     padding: clamp(3rem, 6vw, 4rem) var(--spacing-card-padding);
     color: var(--color-text-light);
-<<<<<<< HEAD
-    @include media-queries.tablet(){
-        margin: 0;
-    }
-=======
->>>>>>> 04f919f075bc484d36e0802c89010b1014d14b81
 }
 
 .pricing__plan--popular .pricing__plan-package,

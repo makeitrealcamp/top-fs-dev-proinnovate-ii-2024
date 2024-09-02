@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @use '../shared/variables';
 
 .pricing__button--solid {
@@ -17,3 +18,42 @@
     z-index: 1;
 }
 
+=======
+@use '../shared/variables' as *;
+
+.button {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: clamp(2.875em, 5.5vw, 3.5em);
+  text-align: center;
+  text-decoration: none;
+  padding: 0 1.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+
+  &--solid {
+    background-color: $color-primary;
+    color: $color-text-light;
+
+    &::before {
+      content: '';
+      width: 0%;
+      height: 100%;
+      background: #000;
+      opacity: 1;
+      border-radius: 0.25rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width 0.3s;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+}
+>>>>>>> 04f919f075bc484d36e0802c89010b1014d14b81
