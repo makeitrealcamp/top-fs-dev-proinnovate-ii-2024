@@ -1,11 +1,12 @@
-# Programa Top Full Stack Developer Proinnóvate 2024
 
-## Mentores 👩🏻‍🏫👨🏼‍🏫
+# Top Full Stack Developer Program Proinnóvate 2024
+
+## Mentors 👩🏻‍🏫👨🏼‍🏫
 - Shymmy W. Garcia
 - Mentor 2
 - Mentor 3
 
-## Estudiantes 👩🏻‍💻🧑🏼‍💻
+## Students 👩🏻‍💻🧑🏼‍💻
 
 
 - [Max Antony](/profiles/max-antony.md)
@@ -16,87 +17,86 @@
 - Estudiante 3
 - ...
 
-## Como es un dia de estudio durante el programa TOP?
+## What is a typical study day like during the TOP program?
 
 ### 8:00 am - 9:00 am:
 
-Clase Magistral en línea con mentor principal
+Online Masterclass with the main mentor
 
 ### 8:00 am - 5:00 pm:
 
-Pueden ocurrir varias actividades en este rango de tiempo
+Various activities can happen during this time frame:
 
-- Trabajar, codificar, en tu proyecto grupal/personal
-- Avanzar en el contenido de cada sprint que se encuentra en la plataforma de apoyo.
-- Hacer las misiones (retos) que son asignados en clase
-- Haer los Assesments (evaluaciones de progreso de aprendizaje) que son asignados en clase.
-- Resolver dudas con los mentores de apoyo vía chat
-- Resolver dudas con los mentores de apoyo en reuniones virtuales grupales preacordadas.
-- Planeacion del sprint
-- Demo del entregable anterior
-- Retrospectiva del spint
-- Resolución de dudas a través del chat
+- Work on your group/personal project
+- Progress on the content of each sprint available on the support platform
+- Complete the missions (challenges) assigned in class
+- Complete the Assessments (learning progress evaluations) assigned in class
+- Resolve doubts with support mentors via chat
+- Resolve doubts with support mentors in pre-arranged virtual group meetings
+- Sprint planning
+- Demo of the previous deliverable
+- Sprint retrospective
+- Resolving doubts through chat
 
 ### 06:00 pm - 7:00 pm:
 
-Clase Magistral en línea con mentor principal
+Online Masterclass with the main mentor
 
-## Fases del programa
+## Program Phases
 
-- **Introducción -> Proyecto en Parejas**: En esta fase, los estudiantes aprenderán a configurar su entorno de trabajo (desarrollo) a nivel profesional, repasarán las herramientas del lenguaje JavaScript necesarias para desarrolar aplicaciones web, y conocerán las mejores prácticas de cómo desarrollar software en equipo.
-- **Principal ->  Proyecto Grupal**: En esta fase, los estudiantes aplicarán los conceptos necesarios para profundizar en el desarrollo de aplicaciones web escalables. A lo largo de este período, aprenderán y dominarán las habilidades necesarias para colaborar en la implementación de un proyecto grupal, abordando temas más específicos y avanzados en el desarrollo web.
-- **Final -> Proyecto Individual**: En esta etapa final, el bootcamp desafía a los estudiantes a desarrollar un MVP de forma individual, utilizando tecnologías emergentes en el desarrollo web. El objetivo es aplicar conocimientos adquiridos a través de herramientas como GraphQL, Serverless, Next.js, Headless CMS, entre otras, fomentando la creatividad y la capacidad de innovación
+- **Introduction: (2 sprints) - Pair Project**: In this phase, students will learn to set up their work environment (development) at a professional level, review the necessary JavaScript tools for developing web applications, and become familiar with best practices for team software development.
+- **Main Phase: (10 sprints) - Group Project**: In this phase, students will apply the necessary concepts to delve deeper into scalable web application development. Throughout this period, they will learn and master the skills needed to collaborate on implementing a group project, addressing more specific and advanced topics in web development.
+- **Final Phase: (2 sprints) - Individual Project**: In this final stage, the bootcamp challenges students to develop an MVP individually, using emerging technologies in web development. The goal is to apply acquired knowledge through tools like GraphQL, Serverless, Next.js, Headless CMS, among others, fostering creativity and innovation skills.
 
-## Entregables y Assesments 💻🤝
+## Deliverables and Assessments 💻🤝
 
-- **Sprint 1**: Entregar misión Git y Github
-- **Sprint 2**: Entregar misión "ES6"
-- **Sprint 3**: Entrega misión "Grid Design y misión JS en el navegador"
-- **Sprint 4**: Assesment 1 "Entega de Proyecto en Parejas"
-- **Sprint 5**: Entrega misión React.js
-- **Sprint 6**: Entrega del front-end del "Proyecto Grupal" y de la misión "React Context"
-- **Sprint 7**: Entrega de misión "Diagrama de bases de datos del proyecto gurpal"
-- **Sprint 8**: Entrega de misión de "Express y Autenticación con JWT" y de la misión "Pruebas Automatizadas"
-- **Sprint 9**: Assesment 2  "Entrega de avance del Proyecto Grupal"
-- **Sprint 10**: Entrega de misión "Bases de datos no relacionales"
-- **Sprint 11**: Entrega misión "React Native"
-- **Sprint 12**: Assesment 3  "Entrega final Proyecto Grupal"
-- **Post-programa**: `DEMO Publico` 🎊🎉💻🎊🎉 | Assesment CV | Assesment Github
+- **Sprint 1**: Deliver Git and Github mission
+- **Sprint 2**: Assessment 1 "ES6"
+- **Sprint 3**: Deliver "Grid Design and JS mission in the browser"
+- **Sprint 4**: Assessment 2 "HTTP Protocol" and deliverable "Pair Project"
+- **Sprint 5**: Deliver React.js mission
+- **Sprint 6**: Deliver front-end of "Group Project" and "React Context" mission
+- **Sprint 7**: Deliver "Group Project database diagram" mission
+- **Sprint 8**: Deliver "Express and JWT Authentication" and "Automated Testing" missions
+- **Sprint 9**: Assessment 3 "APIs, relational databases, and authentication"
+- **Sprint 10**: Deliver "Non-relational databases" mission
+- **Sprint 11**: Deliver "React Native" mission
+- **Sprint 12**: Final delivery of the "Group Project"
+- **Post-program**: `Public DEMO` 🎊🎉💻🎊🎉 | CV Assessment | Github Assessment
 
-## Requisitos para culminar satisfactoriamente el programa
+## Requirements to successfully complete the program
 
-Deberás presentar y aprobar satisfactoriamente lo siguiente:
+You must present and pass the following missions:
 
-1. Assesment CV.
-2. Assesment Github.
-3. Assesment LinkedIn
-4. Proyecto en Parejas.
-5. Proyecto Grupal.
-6. Proyecto Individual.
+1. CV Assessment.
+2. Github Assessment.
+3. Pair Project.
+4. Group Project.
+5. Individual Project.
 
-Los lineamientos para los proyectos individuales y grupales son los siguientes:
+The guidelines for the individual and group projects are as follows:
 
-**El Proyecto Grupal debe tener:**
+**The Group Project must have:**
 
-- Registro y autenticación de usuarios.
-- Almacenar información en una base de datos (Postgresql).
-- El backend debe estar implementado en Node.js (Express) usando TypeScript y el frontend en React.
-- Debe incluir carga de imágenes y envío de correos.
-- Debe tener al menos una de las siguientes funcionalidades:
-  - Pagos
-  - Presentar información en un mapa.
-  - Tiempo Real (Web Sockets).
-- Debe estar desplegada en Internet (Netllify, Heroku, Vercel)
-- Debe al menos tener pruebas end-to-end con Cypress.
+- User registration and authentication.
+- Store information in a database (PostgreSQL).
+- The backend must be implemented in Node.js (Express) using TypeScript, and the frontend in React.
+- It must include image uploads and email sending.
+- It must have at least one of the following functionalities:
+  - Payments
+  - Present information on a map.
+  - Real-time features (WebSockets).
+- It must be deployed on the internet (Netlify, Heroku, Vercel).
+- It must have at least end-to-end tests with Cypress.
 
-**El Proyecto Individual:**
+**The Individual Project:**
 
-- Utilizar react.js (mobile o web) y/o node.js para el backend
-- Autenticación de usuarios.
-- Debe incluir carga de imágenes.
-- Se debe presentar un video a modo de DEMO de no mas de 7 minutos donde el estudiantes exponga los siguientes temas:
-  1. Introducción (Nombre del proyecto, URL’s).
-  2. Descripción de la aplicación.
-  3. Metodología (Jira, Github, SCRUM, sprintes)
-  4. Tecnologías (React, Material, Express, [Socket.io](http://socket.io/), MongoDB, )
-  5. Diagrama de como esta distribuida su aplicacion (arquitectura) backend, frontend, servicios extras
+- Use React.js (mobile or web) and/or Node.js for the backend
+- User authentication.
+- It must include image uploads.
+- A video demo of no more than 7 minutes must be presented where the student covers the following topics:
+  1. Introduction (Project name, URLs).
+  2. Application description.
+  3. Methodology (Jira, Github, SCRUM, sprints)
+  4. Technologies (React, Material, Express, [Socket.io](http://socket.io/), MongoDB)
+  5. Diagram of how the application is distributed (architecture) backend, frontend, extra services

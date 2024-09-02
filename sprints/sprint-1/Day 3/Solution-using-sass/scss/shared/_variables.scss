@@ -1,0 +1,22 @@
+// _variables.scss
+
+// Color tokens
+$color-primary: #F41E1E;
+$color-primary-light: #ffba43;
+$color-secondary: #ffba43;
+$color-text-dark: #1a1a1a;
+$color-text-light: #fafbfc;
+$color-body-text: #4e4b66;
+$color-bg-light: #f7f7f7;
+
+// Font tokens
+$font-family: 'Roboto', sans-serif;
+$font-size-base: 1rem;
+$font-size-topper: clamp(0.8125rem, 1.6vw, 1rem);
+$font-size-header: clamp(1.9375rem, 3.9vw, 3.0625rem);
+
+// Spacing tokens
+$spacing-section-padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+$spacing-card-padding: clamp(2rem, 2vw, 2.5rem);
+$spacing-gap-small: 0.75rem;
+$spacing-gap-large: 1.5rem;

@@ -1,0 +1,12 @@
+@use 'index' ;
+
+body {
+  font-family: index.$font-family;
+  margin: 0;
+  padding: 0;
+  background-color: index.$color-bg-light;
+}
+
+.pricing {
+  @include index.flex-center;
+}

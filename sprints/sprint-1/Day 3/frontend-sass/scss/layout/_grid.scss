@@ -1,0 +1,14 @@
+@use '../abstracts/breakpoints' as *;
+
+.testimonial-grid {
+  display: grid;
+  gap: 2rem;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
