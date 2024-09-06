@@ -20,7 +20,7 @@ function CreateContact(name, phone) {
 function RenderContacts(contacts_) {
   contactList.innerHTML = "";
   contacts_.forEach(function (contact) {
-    var li = document.createElement("li");
+    const li = document.createElement("li");
     li.classList.add("contact-item");
     li.setAttribute("data-id", contact.id);
     li.innerHTML = `<strong>${contact.name}</strong> - ${contact.phone} <button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button>`;
@@ -42,9 +42,9 @@ function InitializeContacts() {
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  var name = getValueById("name");
-  var phone = getValueById("phone");
-  var terms = document.getElementById("terms").checked;
+  const name = getValueById("name");
+  const phone = getValueById("phone");
+  const terms = document.getElementById("terms").checked;
 
   if (!/^[A-Za-z\s]+$/.test(name)) {
     showErrorSpan(
@@ -70,7 +70,7 @@ contactForm.addEventListener("submit", (e) => {
     return;
   }
 
-  var newContact = CreateContact(name, phone);
+  const newContact = CreateContact(name, phone);
   contacts.push(newContact);
   setLocalStorageValue(LocalStorageKey.contacts, contacts);
 
@@ -124,8 +124,8 @@ contactList.addEventListener("click", (e) => {
 });
 
 filterInput.addEventListener("input", async (e) => {
-  var filterValue = e.target.value;
-  var filteredContacts = await new Promise((res, rej) => {
+  const filterValue = e.target.value;
+  const filteredContacts = await new Promise((res, rej) => {
     if (filterValue == "") {
       res(contacts);
     } else {
