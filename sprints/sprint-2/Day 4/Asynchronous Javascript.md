@@ -4,6 +4,7 @@
 Asynchronous programming is a core concept in JavaScript, enabling code to perform tasks without blocking the main thread. This is crucial for operations like network requests, file reading, or any I/O operation where waiting for a response could make the application unresponsive.
 
 ## Table of Contents
+
 - [Introduction to Asynchronous JavaScript](#introduction-to-asynchronous-javascript)
 - [Callbacks](#callbacks)
 - [Promises](#promises)
@@ -119,7 +120,6 @@ fetchData()
         console.error('Error:', error);
     });
 ```
-
 
 ## Handling Multiple Promises
 
@@ -281,7 +281,6 @@ async function displayData() {
 
 - The `try` block contains the code that might throw an error.
 - The `catch` block handles the error if one is thrown.
-
 
 ## Error Handling in Asynchronous Code
 

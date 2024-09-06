@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Injection Example</title>
+  <!-- XSS attack with javascript in img src attribute -->
+</head>
+<body>
+
+  <h1>Unsafe Textbox Example (JavaScript Injection)</h1>
+
+  <form id="unsafeForm">
+    <label for="input">Enter text:</label>
+    <input type="text" id="input" />
+    <button type="button" onclick="displayInput()">Submit</button>
+  </form>
+
+  <h2>Output:</h2>
+  <div id="output"></div>
+
+  <script>
+    //<img src='#' onerror=alert(1) />
+    function displayInput() {
+      const userInput = document.getElementById('input').value;
+      console.log(userInput);
+      document.getElementById('output').innerHTML = userInput;
+    }
+  </script>
+
+</body>
+</html>
