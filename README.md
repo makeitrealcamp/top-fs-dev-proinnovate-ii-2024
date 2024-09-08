@@ -8,17 +8,26 @@
 
 ## Students 👩🏻‍💻🧑🏼‍💻
 
+- Student 1
+- Student 2
+- Student 3
+
 
 - [Max Antony](/profiles/max-antony.md)
 - **Sebastian Marat Urdanegui Bisalaya** - <a href="https://github.com/SebastianUrdaneguiBisalaya?tab=repositories">GitHub</a> | <a href="https://www.linkedin.com/in/sebastianurdaneguibisalaya/">LinkedIn</a> | <a href="https://sebastianurdanegui.vercel.app/">Landing Page</a>
 - [Leslie Zarate](./profiles/example-perfil-estudiante.md)
-- Student 1
-- Student 2
-- Student 3
+- [Luis Lopez](/profiles/luis-lopez.md)
+- Estudiante 2
+- Estudiante 3
 - ...
 
 ## What is a typical study day like during the TOP program?
 
+### 7:50 am - 9:00 am:
+
+Online Masterclass with the main mentor
+
+### 9:00 am - 5:00 pm:
 ### 8:00 am - 9:00 am:
 
 Online Masterclass with the main mentor
@@ -38,6 +47,7 @@ Various activities can happen during this time frame:
 - Sprint retrospective
 - Resolving doubts through chat
 
+### 04:00 pm - 5:00 pm:
 ### 06:00 pm - 7:00 pm:
 
 Online Masterclass with the main mentor

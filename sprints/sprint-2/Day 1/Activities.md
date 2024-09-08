@@ -129,7 +129,7 @@
 2. **Singleton Pattern with IIFE**
    - **Objective:** Implement a Singleton pattern using an IIFE to ensure only one instance of an object is created.
    - **Example:**
-     ```javascript
+     ```javascript  
      const singleton = (function() {
         // Your implementation here
      })();

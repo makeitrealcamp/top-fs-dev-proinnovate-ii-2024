@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+// make your imports here
+@use './components/card';
+@use './shared/base';
+@use './components/pricing';
+@use './components/buttons'
+=======
 @use 'index' ;
 
 body {
@@ -10,3 +17,4 @@ body {
 .pricing {
   @include index.flex-center;
 }
+>>>>>>> 04f919f075bc484d36e0802c89010b1014d14b81

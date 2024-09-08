@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+@use '../shared/variables';
+
+.pricing__button--solid {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+=======
 @use '../shared/variables' as *;
 
 .button {
@@ -35,3 +56,4 @@
     }
   }
 }
+>>>>>>> 04f919f075bc484d36e0802c89010b1014d14b81
