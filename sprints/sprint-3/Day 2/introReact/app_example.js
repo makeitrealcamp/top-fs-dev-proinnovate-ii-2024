@@ -29,7 +29,7 @@ function App() {
   );
 }
 
-import { createStore } from '../Day 1/components/store.js';
+import { createStore } from '../../Day 1/components/store.js';
 
 const state = {
   counter: 10,
