@@ -1,20 +1,21 @@
 import { data } from './data.js';
+// import { Order } from './Order.js';
 
-console.log({ data });
 function Title({ text }) {
   return <h1>{text}</h1>;
 }
 
-const Order = ({ order }) => {
-  return (
-    <div>
-      <h2>Order ID: {order.orderId}</h2>
-      <h3>Customer Name: {order.customerName}</h3>
-      <p>Date: {order.date}</p>
-      <p>Total Amount: {order.totalAmount}</p>
-    </div>
-  );
-};
+//  const Order = ({ order }) => {
+//   return (
+//     <div>
+//       <h2>Order ID: {order.orderId}</h2>
+//       <h3>Customer Name: {order.customerName}</h3>
+//       <p>Date: {order.date}</p>
+//       <p>Total Amount: {order.totalAmount}</p>
+//     </div>
+//   );
+// };
+
 
 const CreateOrder = ({ onSubmit }) => {
   /*
