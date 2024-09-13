@@ -3,7 +3,7 @@
  * @type {import("prettier").Config}
  */
 const config = {
-    trailingComma: 'es6',
+    trailingComma: 'all',
     tabWidth: 2,
     semi: false,
     singleQuote: true,
