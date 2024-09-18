@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container h3 {
+    margin: 0;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background-color: #ff0000;
+}
+
+.btn-delete:hover {
+    background-color: #cc0000;
+}
+
+.btn-edit {
+    background-color: #00ff00;
+}
+
+.btn-edit:hover {
+    background-color: #00cc00;
+}
