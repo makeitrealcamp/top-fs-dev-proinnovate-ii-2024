@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { Post } from '../components/Posts/Post';
 import { Comments } from '../components/Comments/Comments';
 
-export const PostPage = () => {
+const PostPage = () => {
   const { id } = useParams<{ id: string }>();
 
   if (!id) {
@@ -16,3 +16,5 @@ export const PostPage = () => {
     </div>
   );
 };
+
+export default PostPage;

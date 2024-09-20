@@ -8,8 +8,8 @@ export const ProtectedRouteV2 = () => {
 
   console.log({ user });
 
-  if (!user?.id) {
-    return <Navigate to="/" replace />;
-  }
+  // if (!user?.id) {
+  //   return <Navigate to="/" replace />;
+  // }
   return <Outlet context={{ user }} />;
 };

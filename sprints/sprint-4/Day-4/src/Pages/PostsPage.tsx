@@ -1,7 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 import { Posts } from '../components/Posts/Posts';
 
-export const PostsPage = () => {
+const PostsPage = () => {
   const context = useOutletContext();
   console.log({ context });
   return (
@@ -11,3 +11,5 @@ export const PostsPage = () => {
     </>
   );
 };
+
+export default PostsPage;

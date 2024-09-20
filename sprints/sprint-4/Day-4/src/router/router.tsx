@@ -1,17 +1,19 @@
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import { UserContextProvider } from '../context/userContext/userContextProvider';
+import { Login } from '../components/User/Login';
+import { ProtectedRoute } from './ProtectedRoute';
+import { TasksPage } from '../Pages/TasksPage';
+import { ProtectedRouteV2 } from './ProtectedRouteV2';
+import { ErrorPage } from '../Pages/ErrorPage';
+import { PostPage, PostsPage } from '../Pages';
+import { ToDos } from '../components/Todos/Todos';
 
-const MainLayout = lazy(() => import('../Layouts/MainLayout') );
+const MainLayout = lazy(() => import('../Layouts/MainLayout'));
 const Home = lazy(() => import('../components/Home/Home'));
-const TasksPage = lazy(() => import('../Pages/TasksPage'));
-const PostsPage = lazy(() => import('../Pages/PostsPage'));
-const PostPage = lazy(() => import('../Pages/PostPage'));
-const ProtectedRoute = lazy(() => import('./ProtectedRoute'));
-const ProtectedRouteV2 = lazy(() => import('./ProtectedRouteV2'));
-const Login = lazy(() => import('../components/User/Login'));
-const UserContextProvider = lazy(
-  () => import('../context/userContext/userContextProvider')
-);
+
+// const PostsPage = lazy(() => import('../Pages/PostsPage'));
+// const PostPage = lazy(() => import('../Pages/PostPage'));
 
 const routes = {
   path: '/',
@@ -20,6 +22,7 @@ const routes = {
       <MainLayout />
     </Suspense>
   ),
+  errorElement: <ErrorPage />,
   children: [
     {
       path: '/',
@@ -36,6 +39,10 @@ const routes = {
           <Login />
         </UserContextProvider>
       ),
+    },
+    {
+      path: '/todos',
+      element: <ToDos />,
     },
     {
       path: '/tasks',
@@ -65,5 +72,5 @@ const routes = {
     },
   ],
 };
-console.log({ routes, MainLayout, Home });
+
 export const router = createBrowserRouter([routes]);
