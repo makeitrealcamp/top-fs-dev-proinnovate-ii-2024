@@ -12,7 +12,7 @@ export const PostPage = () => {
     <div>
       <Post id={id} />
 
-      <Comments postId={id} />
+      {/* <Comments postId={id} /> */}
     </div>
   );
 };

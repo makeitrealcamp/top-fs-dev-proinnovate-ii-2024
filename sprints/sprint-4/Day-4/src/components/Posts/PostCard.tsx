@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useOutletContext } from 'react-router-dom';
+import { UserContext } from '../../context/userContext/userContextProvider';
 
 type Props = {
   title: string;
@@ -7,6 +9,12 @@ type Props = {
 };
 
 export const PostCard = ({ title, body, id }: Props) => {
+
+  const user = useContext(UserContext);
+  const userOutlet = useOutletContext();
+  console.log('user in post card', user);
+  console.log('userOutlet in post card', userOutlet);
+
   return (
     <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
