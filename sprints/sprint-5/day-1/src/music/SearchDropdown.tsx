@@ -32,7 +32,7 @@ export const SearchDropdown = ({
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     debounce(() => {
       setSearchQuery(e.target.value);
-    }, 2000)();
+    }, 500)();
   };
 
   return (
