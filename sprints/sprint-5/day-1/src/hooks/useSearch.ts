@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { searchMusic } from '../services/searchMusic';
-import { useThrottle } from './useThrottle';
+import { debounce } from '../utils/debounce';
+
 
 type SearchType = 'album' | 'artist' | 'playlist';
 
@@ -17,15 +18,15 @@ export const useSearch = ({
 
   const [sortOption, setSortOption] = useState('');
 
-  const throttledSearchQuery = useThrottle(searchQuery, 5000);
+
 
   const fetchResults = useCallback(async () => {
-    if (!throttledSearchQuery.trim()) return;
+    if (!searchQuery.trim()) return;
 
     setLoading(true);
     try {
       const { mappedResults } = await searchMusic(
-        throttledSearchQuery,
+        searchQuery,
         selectedOption
       );
       setResults(mappedResults);
@@ -34,13 +35,26 @@ export const useSearch = ({
     } finally {
       setLoading(false);
     }
-  }, [throttledSearchQuery, selectedOption]);
+  }, [searchQuery, selectedOption]);
+
+  const debouncedFetchResults = useMemo(
+    () => debounce(fetchResults, 2000), 
+    [fetchResults]
+  );
+
   useEffect(() => {
     if (searchQuery.trim()) {
-      fetchResults();
+      debouncedFetchResults();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedOption, searchQuery]);
+  }, [selectedOption, searchQuery, debouncedFetchResults]);
+
+
+
+  // useEffect(() => {
+  //   if (searchQuery.trim()) {
+  //     fetchResults();
+  //   }
+  // }, [selectedOption, searchQuery]);
 
   useEffect(() => {
     console.log('rendering');
@@ -66,6 +80,9 @@ export const useSearch = ({
     });
     return sorted;
   }, [sortOption, results]);
+
+
+
 
   console.log(sortedResults);
   return {
