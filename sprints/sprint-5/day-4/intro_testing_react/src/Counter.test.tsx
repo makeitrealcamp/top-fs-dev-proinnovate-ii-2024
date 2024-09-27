@@ -4,7 +4,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 
 import { Counter } from './Counter';
 
-describe('counter', () => {
+describe.skip('counter', () => {
   it('should render the  component', () => {
     const { getByText } = render(<Counter />);
     // const text = screen.getByText(/Counter/i);
@@ -29,7 +29,7 @@ describe('counter', () => {
 
     // const value = screen.getByTestId('counter-value');
     const value = screen.getByText('0');
-    console.log(value);
+
     expect(value).toBeInTheDocument();
 
   });

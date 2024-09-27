@@ -5,12 +5,14 @@ export const Counter = () => {
   return (
     <div>
       <h1>Counter</h1>
-      <p data-testid="counter-value">{value}</p>
+      <h2 data-testid="counter-value" >{value}</h2>
       <div>
         <button onClick={() => setValue((prev) => prev + 1)} role="button">
           increase
         </button>
-        <button onClick={() => setValue((prev) => prev - 1)} role="button">decrease</button>
+        <button onClick={() => setValue((prev) => prev - 1)} role="button">
+          decrease
+        </button>
       </div>
     </div>
   );
