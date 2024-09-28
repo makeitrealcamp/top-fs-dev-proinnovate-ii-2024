@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { getAllByTestId, render, waitFor } from '@testing-library/react';
 import { Posts } from './Posts';
 
-describe.only('Posts using fetch', () => {
+describe('Posts using fetch', () => {
   it('should display loading message', async () => {
     const { getByText } = render(<Posts />);
     expect(getByText('Loading...')).toBeInTheDocument();
