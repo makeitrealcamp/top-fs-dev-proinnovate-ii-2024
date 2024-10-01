@@ -1,0 +1,195 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "email": "john.doe@example.com",
+      "createdAt": "2024-09-24T21:45:36.404439"
+    },
+    {
+      "id": "2",
+      "username": "jane_smith",
+      "email": "jane.smith@example.com",
+      "createdAt": "2024-09-24T21:45:36.404448"
+    },
+    {
+      "id": "3",
+      "username": "sam_black",
+      "email": "sam.black@example.com",
+      "createdAt": "2024-09-24T21:45:36.404449"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "4",
+      "title": "Task 4",
+      "description": "This is description for Task 4",
+      "status": "done",
+      "createdAt": "2024-09-24T21:45:36.404658",
+      "updatedAt": "2024-09-24T21:45:36.404661",
+      "userId": 3
+    },
+    {
+      "id": "6",
+      "title": "Task 6",
+      "description": "This is description for Task 6",
+      "status": "in progress",
+      "createdAt": "2024-09-24T21:45:36.404669",
+      "updatedAt": "2024-09-24T21:45:36.404670",
+      "userId": 3
+    },
+    {
+      "id": "7",
+      "title": "Task 7",
+      "description": "This is description for Task 7",
+      "status": "not started",
+      "createdAt": "2024-09-24T21:45:36.404672",
+      "updatedAt": "2024-09-24T21:45:36.404673",
+      "userId": 2
+    },
+    {
+      "id": "9",
+      "title": "Task 9",
+      "description": "This is description for Task 9",
+      "status": "not started",
+      "createdAt": "2024-09-24T21:45:36.404681",
+      "updatedAt": "2024-09-24T21:45:36.404682",
+      "userId": 1
+    },
+    {
+      "id": "10",
+      "title": "Task 10",
+      "description": "This is description for Task 10",
+      "status": "done",
+      "createdAt": "2024-09-24T21:45:36.404684",
+      "updatedAt": "2024-09-24T21:45:36.404686",
+      "userId": 1
+    },
+    {
+      "id": "11",
+      "title": "Task 11",
+      "description": "This is description for Task 11",
+      "status": "done",
+      "createdAt": "2024-09-24T21:45:36.404688",
+      "updatedAt": "2024-09-24T21:45:36.404689",
+      "userId": 3
+    },
+    {
+      "id": "12",
+      "title": "Task 12",
+      "description": "This is description for Task 12",
+      "status": "not started",
+      "createdAt": "2024-09-24T21:45:36.404691",
+      "updatedAt": "2024-09-24T21:45:36.404692",
+      "userId": 3
+    },
+    {
+      "id": "13",
+      "title": "Task 13",
+      "description": "This is description for Task 13",
+      "status": "not started",
+      "createdAt": "2024-09-24T21:45:36.404694",
+      "updatedAt": "2024-09-24T21:45:36.404695",
+      "userId": 1
+    },
+    {
+      "id": "14",
+      "title": "Task 14",
+      "description": "This is description for Task 14",
+      "status": "in progress",
+      "createdAt": "2024-09-24T21:45:36.404697",
+      "updatedAt": "2024-09-24T21:45:36.404698",
+      "userId": 3
+    },
+    {
+      "id": "15",
+      "title": "Task 15",
+      "description": "This is description for Task 15",
+      "status": "in progress",
+      "createdAt": "2024-09-24T21:45:36.404700",
+      "updatedAt": "2024-09-24T21:45:36.404701",
+      "userId": 3
+    },
+    {
+      "id": "16",
+      "title": "Task 16",
+      "description": "This is description for Task 16",
+      "status": "in progress",
+      "createdAt": "2024-09-24T21:45:36.404703",
+      "updatedAt": "2024-09-24T21:45:36.404704",
+      "userId": 3
+    },
+    {
+      "id": "18",
+      "title": "Task 18",
+      "description": "This is description for Task 18",
+      "status": "in progress",
+      "createdAt": "2024-09-24T21:45:36.404709",
+      "updatedAt": "2024-09-24T21:45:36.404710",
+      "userId": 3
+    },
+    {
+      "id": "33",
+      "title": "Task 33",
+      "description": "Task 3 description",
+      "status": "not started",
+      "createdAt": "2024-09-24T23:29:21.882Z",
+      "updatedAt": "2024-09-24T23:29:21.882Z",
+      "userId": 1
+    },
+    {
+      "id": "34",
+      "title": "Task 33",
+      "description": "Task 3 description",
+      "status": "not started",
+      "createdAt": "2024-09-24T23:29:29.573Z",
+      "updatedAt": "2024-09-24T23:29:29.573Z",
+      "userId": 1
+    },
+    {
+      "id": "35",
+      "title": "Task 34",
+      "description": "Task 3 description",
+      "status": "not started",
+      "createdAt": "2024-09-24T23:32:35.017Z",
+      "updatedAt": "2024-09-24T23:32:35.017Z",
+      "userId": 1
+    },
+    {
+      "id": "36",
+      "title": "Task 34",
+      "description": "Task 3 description",
+      "status": "not started",
+      "createdAt": "2024-09-24T23:32:56.342Z",
+      "updatedAt": "2024-09-24T23:32:56.342Z",
+      "userId": 1
+    },
+    {
+      "id": "37",
+      "title": "Task 35",
+      "description": "Task 35 description",
+      "status": "not started",
+      "createdAt": "2024-09-24T23:35:38.815Z",
+      "updatedAt": "2024-09-24T23:35:38.815Z",
+      "userId": 1
+    },
+    {
+      "id": "38",
+      "title": "Task 37",
+      "description": "Task 37 description",
+      "status": "not started",
+      "createdAt": "2024-09-24T23:40:59.714Z",
+      "updatedAt": "2024-09-24T23:40:59.714Z",
+      "userId": 1
+    },
+    {
+      "id": "1727222148502",
+      "title": "new task from form",
+      "description": "this is a new task",
+      "status": "not started",
+      "createdAt": "2024-09-24T23:55:48.502Z",
+      "updatedAt": "2024-09-24T23:55:48.502Z",
+      "userId": 1
+    }
+  ]
+}

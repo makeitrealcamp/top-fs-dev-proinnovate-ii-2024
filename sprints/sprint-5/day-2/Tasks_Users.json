@@ -1,0 +1,204 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "john_doe",
+            "email": "john.doe@example.com",
+            "createdAt": "2024-09-24T21:45:36.404439"
+        },
+        {
+            "id": 2,
+            "username": "jane_smith",
+            "email": "jane.smith@example.com",
+            "createdAt": "2024-09-24T21:45:36.404448"
+        },
+        {
+            "id": 3,
+            "username": "sam_black",
+            "email": "sam.black@example.com",
+            "createdAt": "2024-09-24T21:45:36.404449"
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "title": "Task 1",
+            "description": "This is description for Task 1",
+            "status": "in progress",
+            "createdAt": "2024-09-24T21:45:36.404630",
+            "updatedAt": "2024-09-24T21:45:36.404635",
+            "userId": 1
+        },
+        {
+            "id": 2,
+            "title": "Task 2",
+            "description": "This is description for Task 2",
+            "status": "in progress",
+            "createdAt": "2024-09-24T21:45:36.404642",
+            "updatedAt": "2024-09-24T21:45:36.404645",
+            "userId": 3
+        },
+        {
+            "id": 3,
+            "title": "Task 3",
+            "description": "This is description for Task 3",
+            "status": "in progress",
+            "createdAt": "2024-09-24T21:45:36.404651",
+            "updatedAt": "2024-09-24T21:45:36.404653",
+            "userId": 2
+        },
+        {
+            "id": 4,
+            "title": "Task 4",
+            "description": "This is description for Task 4",
+            "status": "done",
+            "createdAt": "2024-09-24T21:45:36.404658",
+            "updatedAt": "2024-09-24T21:45:36.404661",
+            "userId": 3
+        },
+        {
+            "id": 5,
+            "title": "Task 5",
+            "description": "This is description for Task 5",
+            "status": "in progress",
+            "createdAt": "2024-09-24T21:45:36.404665",
+            "updatedAt": "2024-09-24T21:45:36.404666",
+            "userId": 1
+        },
+        {
+            "id": 6,
+            "title": "Task 6",
+            "description": "This is description for Task 6",
+            "status": "in progress",
+            "createdAt": "2024-09-24T21:45:36.404669",
+            "updatedAt": "2024-09-24T21:45:36.404670",
+            "userId": 3
+        },
+        {
+            "id": 7,
+            "title": "Task 7",
+            "description": "This is description for Task 7",
+            "status": "not started",
+            "createdAt": "2024-09-24T21:45:36.404672",
+            "updatedAt": "2024-09-24T21:45:36.404673",
+            "userId": 2
+        },
+        {
+            "id": 8,
+            "title": "Task 8",
+            "description": "This is description for Task 8",
+            "status": "not started",
+            "createdAt": "2024-09-24T21:45:36.404677",
+            "updatedAt": "2024-09-24T21:45:36.404678",
+            "userId": 1
+        },
+        {
+            "id": 9,
+            "title": "Task 9",
+            "description": "This is description for Task 9",
+            "status": "not started",
+            "createdAt": "2024-09-24T21:45:36.404681",
+            "updatedAt": "2024-09-24T21:45:36.404682",
+            "userId": 1
+        },
+        {
+            "id": 10,
+            "title": "Task 10",
+            "description": "This is description for Task 10",
+            "status": "done",
+            "createdAt": "2024-09-24T21:45:36.404684",
+            "updatedAt": "2024-09-24T21:45:36.404686",
+            "userId": 1
+        },
+        {
+            "id": 11,
+            "title": "Task 11",
+            "description": "This is description for Task 11",
+            "status": "done",
+            "createdAt": "2024-09-24T21:45:36.404688",
+            "updatedAt": "2024-09-24T21:45:36.404689",
+            "userId": 3
+        },
+        {
+            "id": 12,
+            "title": "Task 12",
+            "description": "This is description for Task 12",
+            "status": "not started",
+            "createdAt": "2024-09-24T21:45:36.404691",
+            "updatedAt": "2024-09-24T21:45:36.404692",
+            "userId": 3
+        },
+        {
+            "id": 13,
+            "title": "Task 13",
+            "description": "This is description for Task 13",
+            "status": "not started",
+            "createdAt": "2024-09-24T21:45:36.404694",
+            "updatedAt": "2024-09-24T21:45:36.404695",
+            "userId": 1
+        },
+        {
+            "id": 14,
+            "title": "Task 14",
+            "description": "This is description for Task 14",
+            "status": "in progress",
+            "createdAt": "2024-09-24T21:45:36.404697",
+            "updatedAt": "2024-09-24T21:45:36.404698",
+            "userId": 3
+        },
+        {
+            "id": 15,
+            "title": "Task 15",
+            "description": "This is description for Task 15",
+            "status": "in progress",
+            "createdAt": "2024-09-24T21:45:36.404700",
+            "updatedAt": "2024-09-24T21:45:36.404701",
+            "userId": 3
+        },
+        {
+            "id": 16,
+            "title": "Task 16",
+            "description": "This is description for Task 16",
+            "status": "in progress",
+            "createdAt": "2024-09-24T21:45:36.404703",
+            "updatedAt": "2024-09-24T21:45:36.404704",
+            "userId": 3
+        },
+        {
+            "id": 17,
+            "title": "Task 17",
+            "description": "This is description for Task 17",
+            "status": "not started",
+            "createdAt": "2024-09-24T21:45:36.404706",
+            "updatedAt": "2024-09-24T21:45:36.404707",
+            "userId": 3
+        },
+        {
+            "id": 18,
+            "title": "Task 18",
+            "description": "This is description for Task 18",
+            "status": "in progress",
+            "createdAt": "2024-09-24T21:45:36.404709",
+            "updatedAt": "2024-09-24T21:45:36.404710",
+            "userId": 3
+        },
+        {
+            "id": 19,
+            "title": "Task 19",
+            "description": "This is description for Task 19",
+            "status": "done",
+            "createdAt": "2024-09-24T21:45:36.404712",
+            "updatedAt": "2024-09-24T21:45:36.404713",
+            "userId": 2
+        },
+        {
+            "id": 20,
+            "title": "Task 20",
+            "description": "This is description for Task 20",
+            "status": "not started",
+            "createdAt": "2024-09-24T21:45:36.404716",
+            "updatedAt": "2024-09-24T21:45:36.404719",
+            "userId": 2
+        }
+    ]
+}
