@@ -3,8 +3,11 @@ import { StoryObj, Meta } from '@storybook/react';
 import { Button } from './Button';
 
 const meta = {
-  title: 'Components/Button',
+  title: 'atoms/Button',
   component: Button,
+  parameters: {
+    layout: 'centered',
+  },
   argTypes: {
     intent: {
       control: {
@@ -17,6 +20,9 @@ const meta = {
         type: 'select',
         options: ['regular', 'small'],
       },
+    },
+    children: {
+      control: 'text',
     },
     disabled: {
       control: 'boolean',
@@ -32,6 +38,7 @@ export const Primary: Story = {
     intent: 'primary',
     size: 'regular',
     disabled: false,
+    children: 'Button',
   },
 };
 

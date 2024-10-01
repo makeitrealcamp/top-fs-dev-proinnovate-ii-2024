@@ -3,8 +3,11 @@ import { StoryObj, Meta } from '@storybook/react';
 import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
-  title: 'Components/Input',
+  title: 'atoms/Input',
   component: Input,
+  parameters: {
+    layout: 'centered',
+  },
   argTypes: {
     label: { control: 'text' },
     placeholder: { control: 'text' },
