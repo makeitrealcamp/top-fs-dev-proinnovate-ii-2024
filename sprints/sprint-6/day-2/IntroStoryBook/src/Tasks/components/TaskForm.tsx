@@ -1,8 +1,10 @@
-import React from 'react';
-import { Input } from './Input';
-import { Button } from './Button';
+import React, { useContext } from 'react';
+import { Input } from '../UI/Input';
+import { Button } from '../UI/Button';
+import { TaskContext } from '../context/TaskContext';
 
-export const TodoForm: React.FC = () => {
+export const TaskForm: React.FC = () => {
+  const { createTask } = useContext(TaskContext);
   const [task, setTask] = React.useState('');
   const [error, setError] = React.useState('');
 
@@ -12,8 +14,11 @@ export const TodoForm: React.FC = () => {
       setError('Task cannot be empty');
       return;
     }
-    // Handle adding the task
-    console.log('Task Added:', task);
+    createTask({
+      id: Date.now(),
+      title: task,
+      completed: false,
+    });
     setTask('');
     setError('');
   };

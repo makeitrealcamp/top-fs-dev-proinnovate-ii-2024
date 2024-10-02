@@ -1,47 +1,21 @@
-import React from 'react';
-import { Button } from './Button';
-import { Input } from './Input';
+import React, { useContext, useState } from 'react';
+import { Button } from '../UI/Button';
+import { Input } from '../UI/Input';
 import { FaEdit, FaTrashAlt, FaSave } from 'react-icons/fa';
+import { TaskContext } from '../context/TaskContext';
 
-interface Task {
-  id: number;
-  title: string;
-  completed: boolean;
-}
+import type { Task } from '../task.types';
 
 export const TaskList: React.FC = () => {
-  const [tasks, setTasks] = React.useState<Task[]>([
-    { id: 1, title: 'Sample Task', completed: false },
-  ]);
-  const [editTaskId, setEditTaskId] = React.useState<number | null>(null);
-  const [editTitle, setEditTitle] = React.useState('');
+  const {
+    tasks,
+    toggleTask,
+    editTask: saveTask,
+    deleteTask,
+  } = useContext(TaskContext);
 
-  const handleToggle = (id: number) => {
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
-  };
-
-  const handleEdit = (task: Task) => {
-    setEditTaskId(task.id);
-    setEditTitle(task.title);
-  };
-
-  const handleSave = (id: number) => {
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === id ? { ...task, title: editTitle } : task
-      )
-    );
-    setEditTaskId(null);
-    setEditTitle('');
-  };
-
-  const handleDelete = (id: number) => {
-    setTasks((prev) => prev.filter((task) => task.id !== id));
-  };
+  const [editTask, setEditTask] = useState<Task | null>(null);
+  const [editTitle, setEditTitle] = useState('');
 
   return (
     <ul className="max-w-md mx-auto mt-4">
@@ -54,10 +28,10 @@ export const TaskList: React.FC = () => {
             <input
               type="checkbox"
               checked={task.completed}
-              onChange={() => handleToggle(task.id)}
+              onChange={() => toggleTask(task.id)}
               className="mr-2"
             />
-            {editTaskId === task.id ? (
+            {editTask?.id === task.id ? (
               <Input
                 label=""
                 value={editTitle}
@@ -75,8 +49,8 @@ export const TaskList: React.FC = () => {
             )}
           </div>
           <div className="flex items-center">
-            {editTaskId === task.id ? (
-              <Button size="small" onClick={() => handleSave(task.id)}>
+            {editTask?.id === task.id ? (
+              <Button size="small" onClick={() => saveTask(task.id, editTitle)}>
                 <FaSave />
               </Button>
             ) : (
@@ -84,14 +58,14 @@ export const TaskList: React.FC = () => {
                 <Button
                   size="small"
                   className="mr-2"
-                  onClick={() => handleEdit(task)}
+                  onClick={() => setEditTask(task)}
                 >
                   <FaEdit />
                 </Button>
                 <Button
                   size="small"
                   intent="tertiary"
-                  onClick={() => handleDelete(task.id)}
+                  onClick={() => deleteTask(task.id)}
                 >
                   <FaTrashAlt />
                 </Button>

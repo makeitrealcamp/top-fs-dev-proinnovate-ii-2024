@@ -28,6 +28,14 @@ const meta = {
       control: 'boolean',
     },
   },
+
+  decorators: [
+    (Story) => (
+      <div className="p-4 border border-red-800 bg-slate-500 dark:bg-gray-800">
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -72,6 +80,13 @@ export const Small = {
     size: 'small',
     disabled: false,
   },
+  decorators: [
+    (Story) => (
+      <div className="p-4 border border-green-800 bg-slate-500 dark:bg-gray-800">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Disabled = {

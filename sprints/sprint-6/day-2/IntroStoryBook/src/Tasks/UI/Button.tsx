@@ -13,7 +13,7 @@ export const Button: React.FC<ButtonProps> = ({
   intent = 'primary',
   size = 'regular',
   disabled = false,
-  children,
+  children = 'Button',
   className,
   ...props
 }) => {
@@ -22,7 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   const intents = {
     primary:
-      'text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600 dark:active:bg-blue-700',
+      'text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 focus:ring-blue-500 dark:bg-red-500 dark:hover:bg-blue-600 dark:active:bg-blue-700',
     secondary:
       'text-white bg-gray-600 hover:bg-gray-700 active:bg-gray-800 focus:ring-gray-500 dark:bg-gray-500 dark:hover:bg-gray-600 dark:active:bg-gray-700',
     tertiary:
