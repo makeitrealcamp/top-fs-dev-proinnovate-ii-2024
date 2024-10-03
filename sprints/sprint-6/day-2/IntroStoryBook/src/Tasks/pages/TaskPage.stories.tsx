@@ -9,7 +9,7 @@ const meta = {
   component: TasksPage,
   decorators: [
     (Story) => (
-      <TaskContextProvider>
+      <TaskContextProvider initialTasks={[]}>
         <Story />
       </TaskContextProvider>
     ),
