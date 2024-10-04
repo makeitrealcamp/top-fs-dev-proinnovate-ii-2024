@@ -1,5 +1,5 @@
 import './App.css';
-import { TasksApp } from './Tasks_redux/TasksApp';
+import { TasksApp } from './features/Tasks_redux/TasksApp';
 
 function App() {
   return (

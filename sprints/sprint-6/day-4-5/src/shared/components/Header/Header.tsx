@@ -56,13 +56,13 @@ export function Header() {
               </li>
               <li>
                 <NavLink
-                  to="/tasks"
+                  to="/register"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
                                         ${isActive ? 'text-slate-700' : 'text-slate-300'} lg:hover:bg-transparent lg:border-0 hover:text-slate-700 lg:p-0`
                   }
                 >
-                  Tasks
+                  Register
                 </NavLink>
               </li>
               <li>

@@ -1,11 +1,10 @@
-
-import { LoginHookForm } from '../login/LoginHookForm';
+import { LoginForm } from '../features/auth/components/login/LoginForm';
 
 export const LoginPage = () => {
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <LoginHookForm />
+        <LoginForm />
       </div>
     </section>
   );

@@ -29,6 +29,33 @@
       "title": "test task 1",
       "description": "",
       "completed": false
+    },
+    {
+      "id": "d06e9a32-f839-4117-b080-3c3995886385",
+      "title": "dfasdf",
+      "description": "",
+      "completed": false
     }
-  ]
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "user@emai.com",
+      "token": "ewsdas312dsdfsdfr34f "
+    }
+  ],
+  "auth": {
+    "register": {
+      "email": ""
+    },
+    "login": [
+      {
+        "user": {
+          "id": "1",
+          "email": "user@emai.com",
+          "token": "ewsdas312dsdfsdfr34f "
+        }
+      }
+    ]
+  }
 }
