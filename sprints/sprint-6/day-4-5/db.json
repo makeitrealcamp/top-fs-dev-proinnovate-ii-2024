@@ -22,17 +22,23 @@
       "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6g",
       "title": "Task 5",
       "description": "This is task 5",
-      "completed": false
+      "completed": true
     },
     {
       "id": "3d18b115-9afc-49ec-8f19-a285400fb464",
       "title": "test task 1",
       "description": "",
-      "completed": false
+      "completed": true
     },
     {
       "id": "d06e9a32-f839-4117-b080-3c3995886385",
       "title": "dfasdf",
+      "description": "",
+      "completed": true
+    },
+    {
+      "id": "cb461db5-c61e-48f1-93a3-7179e44ba308",
+      "title": "My new async Task",
       "description": "",
       "completed": false
     }
