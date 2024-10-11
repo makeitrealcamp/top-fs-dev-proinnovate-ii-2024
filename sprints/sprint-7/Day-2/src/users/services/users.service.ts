@@ -1,33 +1,29 @@
-import { User } from "../entity/user";
+import { User } from '../entity/user';
 import { prisma } from '../../database/database';
 
 interface UserService {
-    getUserById(id: number): User;
-    getUsers(): User[];
-    createUser(user: User): User;
-    updateUser(user: User): User;
-    deleteUser(id: number): void;
+  getUserById(id: string): Promise<User | null>;
+  getUsers(): Promise<User[]>;
+  createUser(user: Partial<User>): Promise<User>;
+  updateUser(id: string, user: Partial<User>): Promise<User>;
+  deleteUser(id: string): Promise<User>;
 }
 
-
-const userService: UserService = (dbClient) => {
-    return {
-        getUserById: (id: number) => {
-            return dbClient.getUserById(id);
-        },
-        getUsers: () => {
-            return dbClient.getUsers();
-        },
-        createUser: (user: User) => {
-            return dbClient.createUser(user);
-        },
-        updateUser: (user: User) => {
-            return dbClient.updateUser(user);
-        },
-        deleteUser: (id: number) => {
-            return dbClient.deleteUser(id);
-        },
-    }
-}
-
-//  userService(prisma);
+export const userService: UserService = {
+  getUsers: async () => await prisma.user.findMany(),
+  getUserById: async (id: string) =>
+    await prisma.user.findUnique({
+      where: {
+        id,
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+      },
+    }),
+  createUser: async (user: User) => await prisma.user.create({ data: user }),
+  updateUser: async (id: string, user: User) =>
+    await prisma.user.update({ where: { id }, data: user }),
+  deleteUser: async (id: string) => await prisma.user.delete({ where: { id } }),
+};

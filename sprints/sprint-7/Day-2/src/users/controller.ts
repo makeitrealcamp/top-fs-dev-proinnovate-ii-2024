@@ -1,14 +1,10 @@
 import { NextFunction, Request, Response } from 'express';
-import { prisma } from '../database/database';
 
-import * as userService from './services';
-
-// Single responsibility principle
-// Clean architecture -> decoupling of concerns
+import { userService } from './services';
 
 const getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const users = await userService.getAllUsers();
+    const users = await userService.getUsers();
     res.json(users);
   } catch (error) {
     next(error);
@@ -19,11 +15,7 @@ const getUserById = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
-    const user = await prisma.user.findUnique({
-      where: {
-        id,
-      },
-    });
+    const user = await userService.getUserById(id);
 
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
@@ -43,13 +35,8 @@ const createUser = async (req: Request, res: Response) => {
   }
 
   try {
-    const user = await prisma.user.create({
-      data: {
-        name,
-        email,
-      },
-    });
-    console.log(user);
+    const user = await userService.createUser({ name, email });
+
     res.status(201).json(user);
   } catch (error: unknown) {
     throw new Error(`Unable to create user: ${error}`);
@@ -60,12 +47,7 @@ const deleteUser = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
-    const user = await prisma.user.delete({
-      where: {
-        id,
-      },
-    });
-
+    const user = await userService.deleteUser(id);
     res.json(user);
   } catch (error) {
     throw new Error(`Unable to delete user: ${error}`);
@@ -77,16 +59,7 @@ const updateUser = async (req: Request, res: Response) => {
   const { name, age, bio } = req.body;
 
   try {
-    const user = await prisma.user.update({
-      where: {
-        id,
-      },
-      data: {
-        name,
-        age,
-        bio,
-      },
-    });
+    const user = await userService.updateUser(id, { name, age, bio });
 
     res.json(user);
   } catch (error) {

@@ -36,3 +36,7 @@ Content-Type: application/json
 "age": 30,
 "bio": "I am a software engineer"
 }
+
+###
+
+GET http://localhost:3000/projects?userId=95f0563b-baae-4167-9f48-d9a5eac6edfe
