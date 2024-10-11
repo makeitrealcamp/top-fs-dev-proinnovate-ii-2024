@@ -39,4 +39,8 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/projects?userId=95f0563b-baae-4167-9f48-d9a5eac6edfe
+GET http://localhost:3000/error
+
+###
+
+GET http://localhost:3000/projects/

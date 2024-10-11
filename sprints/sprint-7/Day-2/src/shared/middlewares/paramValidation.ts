@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
 
+import { ValidationError } from '../errors/ValidationError';
+
 const uuidSchema = z.string().uuid();
 
 export const paramValidation = (
@@ -10,8 +12,12 @@ export const paramValidation = (
 ) => {
   const { id } = req.params;
 
+  if (!id) {
+    return next(new ValidationError('id is required'));
+  }
+
   if (!uuidSchema.safeParse(id).success) {
-    next(new Error('Invalid ID'));
+    return next(new ValidationError('invalid id'));
   }
   next();
 };

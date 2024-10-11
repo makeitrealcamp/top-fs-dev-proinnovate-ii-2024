@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import * as User from './controller';
-import { paramValidation } from './middleware/paramValidation';
+import { paramValidation } from '../shared/middlewares/paramValidation';
 
 const router = Router();
 
