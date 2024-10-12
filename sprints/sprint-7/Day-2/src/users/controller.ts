@@ -18,7 +18,7 @@ const getUserById = async (req: Request, res: Response) => {
     const user = await userService.getUserById(id);
 
     if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+       res.status(404).json({ error: 'User not found' });
     }
 
     res.json(user);
@@ -31,7 +31,7 @@ const createUser = async (req: Request, res: Response) => {
   const { name, email } = req.body;
 
   if (!name || !email) {
-    return res.status(400).json({ error: 'Name and email are required' });
+     res.status(400).json({ error: 'Name and email are required' });
   }
 
   try {
