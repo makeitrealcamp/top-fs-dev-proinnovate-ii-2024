@@ -1,0 +1,67 @@
+{
+  "tasks": [
+    {
+      "id": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
+      "title": "Task 1",
+      "description": "This is task 1",
+      "completed": false
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6e",
+      "title": "Task 3",
+      "description": "This is task 3",
+      "completed": true
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6f",
+      "title": "Task 4",
+      "description": "This is task 4",
+      "completed": true
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6g",
+      "title": "Task 5",
+      "description": "This is task 5",
+      "completed": true
+    },
+    {
+      "id": "3d18b115-9afc-49ec-8f19-a285400fb464",
+      "title": "test task 1",
+      "description": "",
+      "completed": true
+    },
+    {
+      "id": "d06e9a32-f839-4117-b080-3c3995886385",
+      "title": "dfasdf",
+      "description": "",
+      "completed": true
+    },
+    {
+      "id": "cb461db5-c61e-48f1-93a3-7179e44ba308",
+      "title": "My new async Task",
+      "description": "",
+      "completed": false
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "user@emai.com",
+      "token": "ewsdas312dsdfsdfr34f "
+    }
+  ],
+  "auth": {
+    "register": {
+      "email": ""
+    },
+    "login": [
+      {
+        "user": {
+          "id": "1",
+          "email": "user@emai.com",
+          "token": "ewsdas312dsdfsdfr34f "
+        }
+      }
+    ]
+  }
+}
