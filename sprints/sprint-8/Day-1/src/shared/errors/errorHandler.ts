@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextFunction, Request, Response, } from 'express';
 import { BaseError } from './BaseError';
 
@@ -7,14 +8,8 @@ export const errorHandler = (
   res: Response,
   next: NextFunction,
 ) => {
-  console.log(err.name);
+
   if (err instanceof BaseError) {
-    console.error({
-      message: err.message,
-      status: err.status,
-      name: err.name,
-      errorType: err.errorType,
-    });
      res.status(err.status).json({ error: err.message });
   }
 if (err.name === 'PrismaClientInitializationError') {

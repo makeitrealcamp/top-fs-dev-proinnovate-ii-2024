@@ -10,3 +10,5 @@ export interface Task {
   projectId: string;     
   project?: Project | null;     
 }
+
+export type TaskInput = Omit<Task, 'id' | 'createdAt' | 'updatedAt' | 'project'>;

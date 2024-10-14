@@ -1,5 +1,5 @@
 import { User } from '../entity/user';
-import { prisma } from '../../database/database';
+import { prisma } from '../../../database/database';
 
 interface UserService {
   getUserById(id: string): Promise<User | null>;

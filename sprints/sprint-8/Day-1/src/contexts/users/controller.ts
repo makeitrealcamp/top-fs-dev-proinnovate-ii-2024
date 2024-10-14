@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
 
 import { userService } from './services';
+import { ApplicationError } from '../../shared/errors/ApplicationError';
+import { errorStatus, errorType } from '../../utils/constants';
 
 const getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -31,7 +33,7 @@ const createUser = async (req: Request, res: Response) => {
   const { name, email } = req.body;
 
   if (!name || !email) {
-     res.status(400).json({ error: 'Name and email are required' });
+     throw new ApplicationError('Name and email are required', errorType.BAD_REQUEST, errorStatus.BAD_REQUEST);
   }
 
   try {

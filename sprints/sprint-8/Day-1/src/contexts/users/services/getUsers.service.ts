@@ -1,4 +1,5 @@
-import { prisma } from '../../database/database';
+import { prisma } from "../../../database/database";
+
 
 export const getAllUsers = async () => {
   try {
