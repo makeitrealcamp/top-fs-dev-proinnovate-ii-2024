@@ -1,0 +1,46 @@
+
+###
+GET  http://localhost:3000/api/users
+###
+
+GET http://localhost:3000/users/cm22k6m4z0000m1rpstksl4ua
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+"name": "John Doe 3",
+"email": "john3@email.com"
+}
+
+###
+
+PUT http://localhost:3000/users/2
+Content-Type: application/json
+
+{
+"name": "Jenny Doe"
+}
+
+###
+
+DELETE http://localhost:3000/users/cm239jr7i0000vptbj74ynmdk
+
+###
+PUT http://localhost:3000/users/95f0563b-baae-4167-9f48-d9a5eac6edfe
+Content-Type: application/json
+
+{
+"age": 30,
+"bio": "I am a software engineer"
+}
+
+###
+
+GET http://localhost:3000/error
+
+###
+
+GET http://localhost:3000/projects/
