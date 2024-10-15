@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/api', userRouter);
+app.use(userRouter);
 app.use(projectsRouter);
 
 app.get('/error', (req, res, next) => {
