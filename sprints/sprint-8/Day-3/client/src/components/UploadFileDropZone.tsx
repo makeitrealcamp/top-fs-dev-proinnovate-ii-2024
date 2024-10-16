@@ -1,9 +1,9 @@
-import './App.css';
+
 import React, { useState, useCallback } from 'react';
 import axios from 'axios';
 import { useDropzone, FileRejection, FileError, File } from 'react-dropzone';
 
-export const UploadFile = () => {
+export const UploadFileDropzone = () => {
   const [file, setFile] = useState<File | null>(null);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
   const [error, setError] = useState<Error | null>(null);

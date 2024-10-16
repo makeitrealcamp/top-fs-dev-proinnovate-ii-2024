@@ -3,6 +3,7 @@ import cookie from 'cookie-parser';
 
 import userRouter from './contexts/users/routes';
 import projectsRouter from './contexts/projects/routes';
+import uploadRoutes from './contexts/fileUpload/routes';
 
 import { errorHandler } from './shared/errors/errorHandler';
 import { AuthenticationError } from './shared/errors/AuthenticationError';
@@ -14,6 +15,7 @@ app.use(cookie());
 
 app.use(userRouter);
 app.use(projectsRouter);
+app.use(uploadRoutes);
 
 app.get('/error', (req, res, next) => {
   const error = new AuthenticationError(
