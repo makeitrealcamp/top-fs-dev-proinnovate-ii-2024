@@ -28,6 +28,10 @@ export const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
+        path: '/auth/discord/callback',
+        element: <SignUp />,
+      },
+      {
         path: '/tasks',
         element: (
           <PrivateRoute>

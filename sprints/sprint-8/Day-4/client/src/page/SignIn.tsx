@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GoogleSignInIcon, DiscordSignInIcon } from '../constants';
 import { SignInButton } from '../components';
 import { SignInForm } from '../modules/auth/components/SignInForm';
 import { loginWithDiscord } from '../modules/auth/services/authService';
 
 export const SignIn = (): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center h-screen px-2">
       <div className="flex flex-col items-center justify-center">
@@ -20,7 +21,7 @@ export const SignIn = (): JSX.Element => {
         <SignInButton
           iconSvg={DiscordSignInIcon}
           text="Sign in with Discord"
-          onClick={loginWithDiscord}
+          onClick={()=>window.location.href = 'http://localhost:3000/auth/discord'}
         />
         <div className="flex items-center w-full my-6">
           <div className="flex-grow border-t border-gray-400"></div>

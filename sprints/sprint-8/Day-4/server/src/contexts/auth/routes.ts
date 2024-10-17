@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { discordAuth } from './controller';
+import { discordAuth , discordCallback} from './controller';
 
 const router = Router();
 
 router.get('/auth/discord', discordAuth);
-router.get('/auth/discord/callback', discordAuth);
+router.get('/auth/discord/callback', discordCallback);
 router.get('/auth/user', (req, res) => {
   console.log({ user: req.user, session: req.session, cookies: req.cookies });
   console.log(req.isAuthenticated());
