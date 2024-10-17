@@ -68,3 +68,10 @@ Authorization: 'Bearer as2312sdasd'
 "password": "123",
 "email": "john3@email.com"
 }
+
+###
+GET http://localhost:3000/auth/user
+Cookie: connect.sid=s%3A2Qgl_dISSbQyIhYMML-RXEpow_n-vcfY.sWZRniaNBYIdBmpRRrsS941hhOUYCeJn1N6%2FstNcNL8
+
+###
+GET http://localhost:3000/auth/logout
