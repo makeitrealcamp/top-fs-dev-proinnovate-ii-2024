@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.5.0",
+    "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "uuid": "^10.0.0",
+    "zod": "^3.23.8",
     "zustand": "^5.0.0"
   },
   "devDependencies": {

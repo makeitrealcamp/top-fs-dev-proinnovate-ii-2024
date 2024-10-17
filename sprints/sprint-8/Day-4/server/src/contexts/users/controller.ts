@@ -8,6 +8,11 @@ const { userRepository, bcryptAdapter, jwtAdapter, mailerService } =
 
 const createUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
+  console.log('create user');
+  console.log({
+    email,
+    password,
+  });
   try {
     const user = await userService.createUser(
       { email, password },
@@ -16,7 +21,9 @@ const createUser = async (req: Request, res: Response) => {
       jwtAdapter,
       mailerService,
     );
-
+    console.log({
+      user,
+    });
     res.status(201).json(user);
   } catch (error: unknown) {
     throw new Error(`Unable to create user: ${error}`);

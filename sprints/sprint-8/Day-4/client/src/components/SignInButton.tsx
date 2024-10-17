@@ -1,4 +1,5 @@
-import { SignInButtonProps } from "../types/Button"
+import { SignInButtonProps } from "../types/button"
+
 
 export const SignInButton = ({iconSvg, text, onClick}: SignInButtonProps) => {
   return (

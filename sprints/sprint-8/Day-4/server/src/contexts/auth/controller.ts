@@ -46,7 +46,9 @@ passport.use(
             },
           });
         }
-
+        console.log({
+          profile,
+        });
         return done(null, profile);
       } catch (error) {
         return done(error, undefined);
@@ -56,8 +58,7 @@ passport.use(
 );
 
 export const discordAuth = (req: Request, res: Response, next: any) => {
-  console.clear();
-  console.log('Discord Auth');
+  console.log('Discord Auth callback');
   passport.authenticate('discord')(req, res, next);
 };
 

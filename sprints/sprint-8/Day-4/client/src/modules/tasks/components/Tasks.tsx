@@ -1,4 +1,4 @@
-import { Task } from "../types"
+import { Task } from "../../../types"
 import { Card } from "./Card"
 
 export const Tasks = ({tasks, deleteTask, updateTask}:{tasks: Task[], deleteTask: (id: Task["id"]) => void, updateTask: (task: Task) => void}) : JSX.Element => {

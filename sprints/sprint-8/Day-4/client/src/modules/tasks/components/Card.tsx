@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Task } from "../types"
+import { Task } from "../../../types"
 
 export const Card = ({id, title, description, status, date, deleteTask, updateTask}:{id: Task["id"], title: Task["title"], description: Task["description"], status: Task["status"], date: Task["date"], deleteTask: (id: Task["id"]) => void, updateTask: (task: Task) => void}) : JSX.Element => {
   const [isEditing, setIsEditing] = useState(false);

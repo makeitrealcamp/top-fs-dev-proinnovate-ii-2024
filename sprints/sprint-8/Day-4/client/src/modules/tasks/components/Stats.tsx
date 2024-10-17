@@ -1,4 +1,4 @@
-import { type StatsProps } from "../types"
+import { type StatsProps } from "../../../types"
 
 export const Stats = ({amount, completed}:StatsProps) : JSX.Element => {
   return (

@@ -1,4 +1,4 @@
-import { Task } from "../types"
+import { Task } from "../../../types"
 import {v4 as uuidv4} from 'uuid';
 
 export const Form = ({setTask}:{setTask: (todo: Task) => void}) : JSX.Element => {

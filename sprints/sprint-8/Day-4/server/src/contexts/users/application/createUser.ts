@@ -16,24 +16,30 @@ export const createUser = async (
 
   const { password } = user;
   const hashedPassword = await encrypt.hash(password);
-
+  console.log({
+    hashedPassword,
+  });
   const newUser = await userRepository.createUser({
     ...user,
     password: hashedPassword,
   });
 
+  console.log({
+    newUser,
+  });
+
   const token = jwt.generateToken({ email: newUser.email });
 
-  if (mailer) {
-    await mailer?.sendMail(
-      newUser.email,
-      'Welcome to our platform',
-      `<h1>Welcome ${newUser.email}</h1>
-    <p>Thanks for joining our platform your token ${token}</p> 
-    Link: <a href="${FRONTEND_URL}/verify/${token}">Verify your account</a>
-    `,
-    );
-  }
+  // if (mailer) {
+  //   await mailer?.sendMail(
+  //     newUser.email,
+  //     'Welcome to our platform',
+  //     `<h1>Welcome ${newUser.email}</h1>
+  //   <p>Thanks for joining our platform your token ${token}</p>
+  //   Link: <a href="${FRONTEND_URL}/verify/${token}">Verify your account</a>
+  //   `,
+  //   );
+  // }
 
-  return newUser;
+  return {id: newUser.id, email: newUser.email, name: newUser.name};
 };
