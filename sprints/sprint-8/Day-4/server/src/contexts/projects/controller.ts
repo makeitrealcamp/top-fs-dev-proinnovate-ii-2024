@@ -35,8 +35,17 @@ export const createProject = async (req: Request, res: Response) => {
   const project = req.body;
 
   try {
-    const newProject = await projectService.createProject(project, repository);
-    res.json(newProject);
+ 
+    const buildProject={
+      name:project.name,
+      description:project.description,
+      userId:project.userId
+    }
+    // const newProject = await projectService.createProject(buildProject, repository);
+    // console.log({
+    //   newProject
+    // });
+    res.json(project);
   } catch (error) {
     throw new Error(`Unable to create project: ${error}`);
   }

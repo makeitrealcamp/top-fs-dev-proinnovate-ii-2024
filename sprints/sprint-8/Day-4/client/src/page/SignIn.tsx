@@ -3,9 +3,23 @@ import { GoogleSignInIcon, DiscordSignInIcon } from '../constants';
 import { SignInButton } from '../components';
 import { SignInForm } from '../modules/auth/components/SignInForm';
 import { loginWithDiscord } from '../modules/auth/services/authService';
+import { useAuth } from '../modules/auth/application/AuthContext';
 
 export const SignIn = (): JSX.Element => {
   const navigate = useNavigate();
+  const {login}= useAuth();
+
+const handleLoginWithDiscord = async () => {
+    try {
+      const { data } = await loginWithDiscord();
+      console.log(data);
+      login(data);
+      navigate('/tasks');
+    } catch (error) {
+      console.log(error);
+    }
+};
+
   return (
     <div className="flex flex-col items-center justify-center h-screen px-2">
       <div className="flex flex-col items-center justify-center">
@@ -22,6 +36,7 @@ export const SignIn = (): JSX.Element => {
           iconSvg={DiscordSignInIcon}
           text="Sign in with Discord"
           onClick={()=>window.location.href = 'http://localhost:3000/auth/discord'}
+          // onClick={handleLoginWithDiscord}
         />
         <div className="flex items-center w-full my-6">
           <div className="flex-grow border-t border-gray-400"></div>

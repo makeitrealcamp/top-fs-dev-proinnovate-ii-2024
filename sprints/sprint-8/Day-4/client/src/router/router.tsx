@@ -5,6 +5,7 @@ import { TasksPage } from '../page/TasksPage';
 import PrivateRoute from './PrivateRoute';
 import { ErrorPage } from '../page/ErrorPage';
 
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -12,15 +13,11 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage/>,
     children: [
       {
-        path: '/',
-        element: <Navigate to="/home" replace />,
-      },
-      {
         path: '/home',
         element: <Home />,
       },
       {
-        path: '/signin',
+        path: '/login',
         element: <SignIn />,
       },
       {

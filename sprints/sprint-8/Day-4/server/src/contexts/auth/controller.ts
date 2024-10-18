@@ -22,9 +22,9 @@ passport.deserializeUser((user: any, done) => {
 passport.use(
   new Strategy(
     {
-      clientID: DISCORD_CLIENT_ID,
-      clientSecret: DISCORD_CLIENT_SECRET,
-      callbackURL: DISCORD_REDIRECT_URI,
+      clientID: `${DISCORD_CLIENT_ID}`,
+      clientSecret: `${DISCORD_CLIENT_SECRET}`,
+      callbackURL: `${DISCORD_REDIRECT_URI}`,
       scope: ['email'],
     },
     async (accessToken: string, refreshToken: string, profile, done) => {
@@ -35,20 +35,21 @@ passport.use(
       // });
 
       try {
-        // const userExists = await prisma.user.findUnique({
-        //   where: {
-        //     email: profile.email,
-        //   },
-        // });
+        const userExists = await prisma.user.findUnique({
+          where: {
+            email: profile.email,
+          },
+        });
 
-        // if (!userExists) {
-        //   await prisma.user.create({
-        //     data: {
-        //       email: profile.email,
-        //     },
-        //   });
-        // }
-        // console.log({ profile });
+        if (!userExists) {
+          await prisma.user.create({
+            data: {
+              email: profile.email,
+              password: accessToken,
+            },
+          });
+        }
+        console.log({ profile });
         return done(null, profile);
       } catch (error) {
         console.log('error in passport discord strategy');
@@ -93,6 +94,12 @@ export const discordCallback = (req: Request, res: Response, next: any) => {
         const queryParams = new URLSearchParams(userData).toString();
 
         // res.redirect(`http://localhost:5173/auth-callback?${queryParams}`);
+        // res.cookie('user', JSON.stringify(userData));
+
+        console.log(req.session);
+        console.log(req.cookies);
+        res.cookie('user', JSON.stringify({ email: user.email }));
+        // res.json(userData);
         res.redirect(`http://localhost:5173`);
       });
     },

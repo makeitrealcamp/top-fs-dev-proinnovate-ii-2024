@@ -1,7 +1,5 @@
-import { HomeLayout } from "../Layout"
+import { HomeLayout } from '../Layout';
 
-export const Home = () : JSX.Element => {
-  return (
-    <HomeLayout/>    
-  )
-}
+export const Home = (): JSX.Element => {
+  return <div>Home page</div>;
+};

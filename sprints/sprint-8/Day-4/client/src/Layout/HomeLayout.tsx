@@ -22,11 +22,11 @@ export const HomeLayout = (): JSX.Element => {
   };
   return (
     <div className="relative">
-      <div className="absolute top-0 right-0 bg-gray-800 flex items-center justify-center p-2 rounded-xl hover:bg-gray-950 cursor-pointer">
-        <Link to="/signin" className="text-white text-[0.8rem]">
+      {/* <div className="absolute top-0 right-0 bg-gray-800 flex items-center justify-center p-2 rounded-xl hover:bg-gray-950 cursor-pointer">
+        <Link to="/login" className="text-white text-[0.8rem]">
           Sign In
         </Link>
-      </div>
+      </div> */}
       <Title />
       <Form setTask={createTask} />
       <Stats amount={amount} completed={completed} />
