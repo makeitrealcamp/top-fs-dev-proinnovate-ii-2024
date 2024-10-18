@@ -5,6 +5,7 @@ async function main() {
     data: {
       email: 'alice@email.com',
       name: 'Alice',
+      password: 'password',
     },
   });
   await prisma.user.upsert({

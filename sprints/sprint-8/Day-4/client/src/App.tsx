@@ -1,5 +1,4 @@
 import './App.css';
-import { Outlet } from 'react-router-dom';
 import { AuthProvider } from './modules/auth/application/AuthContext';
 import { MainLayout } from './Layout/MainLayout';
 

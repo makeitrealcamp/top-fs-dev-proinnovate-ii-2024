@@ -3,7 +3,8 @@ import { useAuth } from '../modules/auth/application/AuthContext';
 
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   const { user } = useAuth();
-  if (!user) {
+
+  if (!user?.email) {
     return <Navigate to="/login" replace />;
   }
 

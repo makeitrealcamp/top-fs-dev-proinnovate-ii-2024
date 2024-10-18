@@ -42,7 +42,11 @@ export const register = async ({
 
 export const logout = async () => {
   try {
-    await api.post('/auth/logout');
+    // await api.post('/auth/logout');
+    await fetch('http://localhost:3000/auth/logout', {
+      method: 'POST',
+      credentials: 'include',
+    });
   } catch (error: unknown) {
     throw new Error(error.response.data.message);
   }
@@ -57,6 +61,15 @@ export const loginWithDiscord = async () => {
     return response.data;
   } catch (error: unknown) {
     console.log(error);
+    throw new Error(error.response.data.message);
+  }
+};
+
+export const getMe = async () => {
+  try {
+    const response = await api.get('/auth/me');
+    return response.data;
+  } catch (error: unknown) {
     throw new Error(error.response.data.message);
   }
 };

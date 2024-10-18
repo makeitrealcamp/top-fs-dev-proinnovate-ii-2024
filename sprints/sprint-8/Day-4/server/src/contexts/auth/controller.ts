@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import passport from 'passport';
+import passport, { use } from 'passport';
 import { Strategy } from 'passport-discord';
 import { prisma } from '../../database/database';
 import {
@@ -49,7 +49,7 @@ passport.use(
             },
           });
         }
-        console.log({ profile });
+        // console.log({ profile });
         return done(null, profile);
       } catch (error) {
         console.log('error in passport discord strategy');
@@ -96,12 +96,21 @@ export const discordCallback = (req: Request, res: Response, next: any) => {
         // res.redirect(`http://localhost:5173/auth-callback?${queryParams}`);
         // res.cookie('user', JSON.stringify(userData));
 
-        console.log(req.session);
-        console.log(req.cookies);
+        // console.log(req.session);
+        // console.log(req.cookies);
         res.cookie('user', JSON.stringify({ email: user.email }));
         // res.json(userData);
-        res.redirect(`http://localhost:5173`);
+        res.redirect(`http://localhost:5173/tasks`);
       });
     },
   )(req, res, next);
+};
+
+export const getMe = (req: Request, res: Response) => {
+  console.log('user get me');
+  if (!req.isAuthenticated()) {
+    return res.status(401).json({ error: 'Unauthorized', user: null });
+  }
+  console.log({ user: req.user });
+  res.json(req.user);
 };
