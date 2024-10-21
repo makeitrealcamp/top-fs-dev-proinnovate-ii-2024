@@ -18,4 +18,5 @@ export const {
   DISCORD_CLIENT_ID,
   DISCORD_CLIENT_SECRET,
   DISCORD_REDIRECT_URI,
+  STRIPE_SECRET_KEY,
 } = process.env;

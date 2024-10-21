@@ -75,3 +75,7 @@ Cookie: connect.sid=s%3A2Qgl_dISSbQyIhYMML-RXEpow_n-vcfY.sWZRniaNBYIdBmpRRrsS941
 
 ###
 GET http://localhost:3000/auth/logout
+
+
+###
+POST http://localhost:3000/checkout

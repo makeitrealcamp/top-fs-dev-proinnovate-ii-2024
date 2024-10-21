@@ -4,7 +4,9 @@ import { Home, SignIn, SignUp } from '../page';
 import { TasksPage } from '../page/TasksPage';
 import PrivateRoute from './PrivateRoute';
 import { ErrorPage } from '../page/ErrorPage';
-
+import ProductPage from '../components/ProducPage';
+import { SuccessPage } from '../page/SuccesPage';
+import { ErrorPaymentPage } from '../page/ErrorPaymenPage';
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +29,18 @@ export const router = createBrowserRouter([
       {
         path: '/auth/discord/callback',
         element: <SignUp />,
+      },
+      {
+        path: '/checkout',
+        element: <ProductPage />,
+      },
+      {
+        path: '/success',
+        element: <SuccessPage />,
+      },
+      {
+        path: '/error',
+        element: <ErrorPaymentPage />,
       },
       {
         path: '/tasks',
