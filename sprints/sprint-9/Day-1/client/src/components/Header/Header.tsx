@@ -5,14 +5,12 @@ export function Header() {
     <header className="shadow sticky z-50 top-0">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link 
-          
-          
-          to="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img
               src="https://img.freepik.com/free-vector/triple-letter-modern-logo-svg_530521-1017.jpg?t=st=1726660515~exp=1726664115~hmac=eba18d58154f8fb2325a34bec3d5937cc0f19c69e76d272c61fae83fde11b455&w=826"
               alt="Logo"
-              className="h-20"/>
+              className="h-20"
+            />
           </Link>
           <div className="flex items-center lg:order-2">
             <Link
@@ -34,12 +32,16 @@ export function Header() {
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
-                <NavLink 
-                state={{ from: 'header' }}
+                <NavLink
+                  state={{ from: 'header' }}
                   to="/"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
-                                        ${isActive ? 'text-slate-700' : 'text-slate-300'} lg:hover:bg-transparent lg:border-0 hover:text-slate-700 lg:p-0`
+                                        ${
+                                          isActive
+                                            ? 'text-slate-700'
+                                            : 'text-slate-300'
+                                        } lg:hover:bg-transparent lg:border-0 hover:text-slate-700 lg:p-0`
                   }
                 >
                   Home
@@ -50,7 +52,11 @@ export function Header() {
                   to="/tasks"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
-                                        ${isActive ? 'text-slate-700' : 'text-slate-300'} lg:hover:bg-transparent lg:border-0 hover:text-slate-700 lg:p-0`
+                                        ${
+                                          isActive
+                                            ? 'text-slate-700'
+                                            : 'text-slate-300'
+                                        } lg:hover:bg-transparent lg:border-0 hover:text-slate-700 lg:p-0`
                   }
                 >
                   Tasks
@@ -61,7 +67,11 @@ export function Header() {
                   to="/contact"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
-                                        ${isActive ? 'text-slate-700' : 'text-slate-300'} lg:hover:bg-transparent lg:border-0 hover:text-slate-700 lg:p-0`
+                                        ${
+                                          isActive
+                                            ? 'text-slate-700'
+                                            : 'text-slate-300'
+                                        } lg:hover:bg-transparent lg:border-0 hover:text-slate-700 lg:p-0`
                   }
                 >
                   Contact
@@ -72,14 +82,18 @@ export function Header() {
                   to="/posts"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
-                                        ${isActive ? 'text-slate-700' : 'text-slate-300'} lg:hover:bg-transparent lg:border-0 hover:text-slate-700 lg:p-0`
+                                        ${
+                                          isActive
+                                            ? 'text-slate-700'
+                                            : 'text-slate-300'
+                                        } lg:hover:bg-transparent lg:border-0 hover:text-slate-700 lg:p-0`
                   }
                 >
                   Posts
                 </NavLink>
               </li>
               <li>
-                <NavLink
+                {/* <NavLink
                   to="/user"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
@@ -87,7 +101,31 @@ export function Header() {
                   }
                 >
                   User
-                </NavLink>
+                </NavLink> */}
+
+                <button
+                  onClick={() => {
+                    fetch(
+                      'http://localhost:3000/customers/cus_R4eKOug9WDpkHc',
+                      {
+                        method: 'GET',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                      }
+                    )
+                      .then((res) => res.json())
+                      .then((data) => {
+                        console.log(data);
+                        window.location=data.url;
+                      }).catch((error) => {
+                        console.error('Checkout error:', error);
+
+                      });
+                  }}
+                >
+                  user
+                </button>
               </li>
             </ul>
           </div>

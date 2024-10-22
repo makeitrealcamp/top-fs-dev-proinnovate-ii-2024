@@ -7,6 +7,7 @@ import { ErrorPage } from '../page/ErrorPage';
 import ProductPage from '../components/ProducPage';
 import { SuccessPage } from '../page/SuccesPage';
 import { ErrorPaymentPage } from '../page/ErrorPaymenPage';
+import ProductPageSubscription from '../components/ProducPageSubscription';
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: '/checkout',
         element: <ProductPage />,
+      },
+      {
+        path: '/subscription',
+        element: <ProductPageSubscription />,
       },
       {
         path: '/success',
