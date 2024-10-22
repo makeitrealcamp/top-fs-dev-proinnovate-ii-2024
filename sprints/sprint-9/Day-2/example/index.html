@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Websocket Example</h1>
+    <p>Open the console to see the message from the server</p>
+    <input type="text" id="input" aria-label="message">
+    <button type="button" id="send">Send</button>
+
+    <script>
+        // Create WebSocket connection.
+        const socket = new WebSocket("ws://localhost:4000");
+
+        // Connection opened
+        socket.addEventListener("open", (event) => {
+            socket.send("Hello Server!");
+        });
+
+        // Listen for messages
+        socket.addEventListener("message", (event) => {
+            console.log("Message from server ", event.data);
+        });
+
+        document.getElementById("send").addEventListener("click", () => {
+            const message = document.getElementById("input").value;
+            console.log('Sending message to server: ', message);
+            // socket.send(message);
+            if(socket.readyState === WebSocket.OPEN){
+                socket.send(message);
+            } else {
+                console.log('Socket is not open');
+            }
+
+        });
+
+
+    </script>
+</body>
+
+</html>
