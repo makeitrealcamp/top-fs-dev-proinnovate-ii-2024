@@ -13,6 +13,7 @@ import userRouter from './contexts/users/routes';
 import projectsRouter from './contexts/projects/routes';
 import uploadRoutes from './contexts/fileUpload/routes';
 import oAuthRoutes from './contexts/auth/routes';
+import transactionRouter from './trasactions/router';
 
 import { errorHandler } from './shared/errors/errorHandler';
 import { AuthenticationError } from './shared/errors/AuthenticationError';
@@ -39,6 +40,7 @@ app.use(userRouter);
 app.use(projectsRouter);
 app.use(uploadRoutes);
 app.use(oAuthRoutes);
+app.use(transactionRouter)
 
 app.use(
   '/graphql',

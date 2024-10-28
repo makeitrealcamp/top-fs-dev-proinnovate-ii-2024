@@ -58,6 +58,9 @@ async function main() {
   const userEve = await prisma.user.findUnique({ where: { email: 'eve@example.com' } });
 
   // Create Posts
+  if (!userAlice || !userBob || !userCharlie || !userDiana || !userEve) {
+    throw new Error('Failed to create users');
+  }
   const post1 = await prisma.post.create({
     data: {
       content: 'Hello, this is Alice\'s first post!',
