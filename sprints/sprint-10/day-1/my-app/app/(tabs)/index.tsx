@@ -1,6 +1,5 @@
-import Tasks from "../../screens/Tasks";
-
+import Tasks from '../../screens/Tasks'
 
 export default function App() {
-  return <Tasks />;
+  return <Tasks />
 }

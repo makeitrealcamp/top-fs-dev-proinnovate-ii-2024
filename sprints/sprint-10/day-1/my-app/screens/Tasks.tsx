@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar'
 import {
   Button,
   FlatList,
@@ -7,11 +7,11 @@ import {
   Text,
   TextInput,
   View,
-} from 'react-native';
-import { styles as globalStyle } from '../styles';
-import { useState } from 'react';
-import { TaskItem } from '../components/TaskItem';
-import { useNavigation } from 'expo-router';
+} from 'react-native'
+import { styles as globalStyle } from '../styles'
+import { useState } from 'react'
+import { TaskItem } from '../components/TaskItem'
+import { useNavigation } from 'expo-router'
 
 const mockTasks = [
   {
@@ -29,59 +29,60 @@ const mockTasks = [
     title: 'Task 3',
     done: false,
   },
-];
+]
 
 export default function Tasks() {
-  const [task, setTask] = useState('');
-  const [tasks, setTasks] = useState(mockTasks);
-  const navigation = useNavigation();
+  const [task, setTask] = useState('')
+  const [tasks, setTasks] = useState(mockTasks)
+  const navigation = useNavigation()
 
   const addTask = () => {
-    if (!task) return;
+    if (!task) return
     const newTask = {
       id: String(tasks.length + 1),
       title: task,
       done: false,
-    };
-    setTasks([...tasks, newTask]);
-    setTask('');
-  };
+    }
+    setTasks([...tasks, newTask])
+    setTask('')
+  }
 
   const toggleTask = (id: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === id ? { ...task, done: !task.done } : task
-      )
-    );
-  };
+        task.id === id ? { ...task, done: !task.done } : task,
+      ),
+    )
+  }
 
   const removeTask = (id: string) => {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
-  };
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id))
+  }
 
-//   const navigateToTaskDetails = (id: string) => {
-//     navigation.navigate('TaskDetails', { id });
-//   };
+  //   const navigateToTaskDetails = (id: string) => {
+  //     navigation.navigate('TaskDetails', { id });
+  //   };
 
   console.log({
     task,
     tasks,
-  });
+  })
   return (
     <>
-      <StatusBar style="auto" />
+      <StatusBar style='auto' />
       <SafeAreaView style={{ ...styles.container }}>
         <View>
           <Text style={globalStyle.title}>My Todo APP</Text>
           <View style={styles.input}>
             <TextInput
-              style={{ borderColor: 'gray', borderWidth: 1, height: 40 }}
-              placeholder="Add a new task"
+              className='border border-red-500'
+              // style={{ borderColor: 'gray', borderWidth: 1, height: 40 }}
+              placeholder='Add a new task'
               value={task}
               onChangeText={setTask}
               placeholderTextColor={'gray'}
             />
-            <Button title="Add" onPress={addTask} />
+            <Button title='Add' onPress={addTask} />
           </View>
           <View>
             <FlatList
@@ -99,7 +100,7 @@ export default function Tasks() {
         </View>
       </SafeAreaView>
     </>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -126,4 +127,4 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through',
     color: 'gray',
   },
-});
+})

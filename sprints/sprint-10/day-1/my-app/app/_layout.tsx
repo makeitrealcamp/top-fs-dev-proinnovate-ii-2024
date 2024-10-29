@@ -1,23 +1,23 @@
-import { Slot, Stack } from "expo-router";
-import { View } from "react-native";
+import { Slot, Stack } from 'expo-router'
+import { View } from 'react-native'
 
 export default function Layout() {
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: "#ccc",
+        backgroundColor: '#ccc',
       }}
     >
       <Stack
         screenOptions={{
           headerStyle: {
-            backgroundColor: "#f4511e",
+            backgroundColor: '#f4511e',
           },
-          headerTintColor: "#fff",
-          headerTitle: "My App",
+          headerTintColor: '#fff',
+          headerTitle: 'My App',
         }}
       />
     </View>
-  );
+  )
 }

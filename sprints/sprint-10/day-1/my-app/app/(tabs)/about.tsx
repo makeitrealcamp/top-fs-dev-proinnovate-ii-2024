@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { Text, View } from 'react-native'
 
 export default function About() {
   return (
@@ -11,5 +11,5 @@ export default function About() {
     >
       <Text>About page</Text>
     </View>
-  );
+  )
 }

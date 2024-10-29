@@ -1,24 +1,24 @@
-import React from 'react';
+import React from 'react'
 import {
   Text,
   StyleSheet,
   TouchableOpacity,
   View,
   TouchableHighlight,
-} from 'react-native';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { Link } from 'expo-router';
+} from 'react-native'
+import MaterialIcons from '@expo/vector-icons/MaterialIcons'
+import { Link } from 'expo-router'
 
 type taskItem = {
-  id: string;
-  title: string;
-  done: boolean;
-};
+  id: string
+  title: string
+  done: boolean
+}
 
 interface TaskItemProps {
-  item: taskItem;
-  toggleTask: (id: string) => void;
-  removeTask: (id: string) => void;
+  item: taskItem
+  toggleTask: (id: string) => void
+  removeTask: (id: string) => void
 }
 
 export const TaskItem = ({ item, toggleTask, removeTask }: TaskItemProps) => {
@@ -36,15 +36,15 @@ export const TaskItem = ({ item, toggleTask, removeTask }: TaskItemProps) => {
       {/* </TouchableOpacity> */}
       <TouchableHighlight
         activeOpacity={0.6}
-        underlayColor="#ff3e3e"
+        underlayColor='#ff3e3e'
         style={styles.button}
         onPress={() => removeTask(item.id)}
       >
-        <MaterialIcons name="delete-forever" size={24} color="red" />
+        <MaterialIcons name='delete-forever' size={24} color='red' />
       </TouchableHighlight>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through',
     color: 'gray',
   },
-});
+})
