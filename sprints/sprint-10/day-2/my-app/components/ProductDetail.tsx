@@ -7,7 +7,7 @@ import { Product } from '~/types/Product'
 export const ProductDetail = () => {
   const { id } = useLocalSearchParams()
   const [product, setProduct] = useState<Product | null>(null)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     axios
@@ -16,8 +16,9 @@ export const ProductDetail = () => {
         setProduct(res.data)
         console.log({ product: res.data })
       })
+
       .then((err: unknown) => {
-        setError(err?.message)
+        setError((err as Error)?.message || 'An unknown error occurred')
       })
   }, [])
 
