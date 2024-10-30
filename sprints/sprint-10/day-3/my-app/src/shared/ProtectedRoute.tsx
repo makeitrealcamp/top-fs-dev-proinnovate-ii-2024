@@ -1,13 +1,14 @@
-import { Stack, useRouter } from 'expo-router'
+import { Redirect, Stack, useRouter } from 'expo-router'
 import React, { ReactNode } from 'react'
-import { useAuth } from '~/context/AuthContext'
+import { useAuth } from '../context/AuthContext'
 
-export const ProtectedRoute = ({ children }: { children: any }) => {
+
+export const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const { isLoggedIn } = useAuth()
-  const router =useRouter()
+
 
   if (!isLoggedIn) {
-    return <Stack.Screen name='login' />
+    return   <Redirect href="/login" />;
   }
 
   return <>{children}</>

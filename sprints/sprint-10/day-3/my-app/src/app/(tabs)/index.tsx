@@ -26,7 +26,6 @@ const Home = () => {
       .get('https://fakestoreapi.com/products')
       .then((res) => {
         setProducts(res.data);
-        console.log({ products: res.data });
       })
       .catch((error) => {
         setError('Failed to load products');

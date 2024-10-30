@@ -9,41 +9,34 @@ import {
 } from 'react-native';
 
 import { Link } from 'expo-router';
+import { useAuth } from '@/src/context/AuthContext';
 
-const Signup = () => {
+const Login = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [confirmPassword, setConfirmPassword] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSignup = async () => {
-    if (!email || !password || !confirmPassword) {
+  const { loading, error: errorSupabase, login } = useAuth();
+
+  const handleLogin = async () => {
+    if (!email || !password) {
       Alert.alert('Error', 'Please fill in all fields.');
       return;
     }
 
-    if (password !== confirmPassword) {
-      Alert.alert('Error', 'Passwords do not match.');
-      return;
-    }
-
-    setLoading(true);
-
     try {
-
-      Alert.alert('Success', 'Account created successfully!');
-
+      await login({ email, password });
     } catch (error: any) {
       console.error(error);
-      Alert.alert('Signup Error', error.message);
-    } finally {
-      setLoading(false);
+      Alert.alert('Login Error', error.message);
+      if (errorSupabase) {
+        Alert.alert('Login Error', errorSupabase);
+      }
     }
   };
 
   return (
     <View className="flex-1 justify-center px-4 bg-white">
-      <Text className="text-3xl font-bold text-center mb-6">Sign Up</Text>
+      <Text className="text-3xl font-bold text-center mb-6">Login</Text>
 
       <TextInput
         placeholder="Email"
@@ -62,34 +55,26 @@ const Signup = () => {
         className="border border-gray-300 rounded-md px-4 py-2 mb-4"
       />
 
-      <TextInput
-        placeholder="Confirm Password"
-        value={confirmPassword}
-        onChangeText={setConfirmPassword}
-        secureTextEntry
-        className="border border-gray-300 rounded-md px-4 py-2 mb-6"
-      />
-
       <TouchableOpacity
-        onPress={handleSignup}
+        onPress={handleLogin}
         className="bg-blue-500 rounded-md px-4 py-2 mb-4"
         disabled={loading}
       >
         {loading ? (
           <ActivityIndicator color="#fff" />
         ) : (
-          <Text className="text-white text-center text-lg">Sign Up</Text>
+          <Text className="text-white text-center text-lg">Login</Text>
         )}
       </TouchableOpacity>
 
       <View className="flex-row justify-center">
-        <Text className="text-gray-600">Already have an account? </Text>
-        <Link href="/login">
-          <Text className="text-blue-500">Login</Text>
+        <Text className="text-gray-600">Doesn't have an account? </Text>
+        <Link href="/signup">
+          <Text className="text-blue-500">Sign Up</Text>
         </Link>
       </View>
     </View>
   );
 };
 
-export default Signup;
+export default Login;
