@@ -11,6 +11,12 @@ import {
 import { Link } from 'expo-router';
 import { useAuth } from '@/src/context/AuthContext';
 
+// challenge
+/*
+implement ZOD and react-hook-form resolver
+
+*/
+
 const Login = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
