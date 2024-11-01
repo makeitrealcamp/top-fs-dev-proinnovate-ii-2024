@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { TabBarIcon } from '@/src/components/navigation/TabBarIcon';
 import { Colors } from '@/src/constants/Colors';
 import { useColorScheme } from '@/src/hooks/useColorScheme';
@@ -12,11 +12,11 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // headerShown: false,
+        headerShown: false,
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="(products)"
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
@@ -28,24 +28,25 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="settings"
         options={{
-          title: 'Explore',
+          title: 'Settings',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? 'code-slash' : 'code-slash-outline'}
-              color={color}
+            <Ionicons
+              name={focused ? 'settings' : 'settings-outline'}
+              size={24}
+              color="black"
             />
           ),
         }}
       />
 
-      <Tabs.Screen
-        name="product"
+      {/* <Tabs.Screen
+        name="(products)"
         options={{
           href: null,
         }}
-      />
+      /> */}
     </Tabs>
   );
 }

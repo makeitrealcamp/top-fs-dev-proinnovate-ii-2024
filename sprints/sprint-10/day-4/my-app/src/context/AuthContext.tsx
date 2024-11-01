@@ -23,6 +23,11 @@ type UserContextType = {
     password: string;
   }) => Promise<void>;
   logout: () => void;
+  user: {
+    email: string;
+    name: string;
+    avatarUrl: string;
+  };
 };
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -76,7 +81,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       email: email,
       password: password,
     });
-    console.log({ error, session });
     if (error) {
       setError(error.message);
       setLoading(false);
@@ -106,6 +110,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         signUp,
         login,
         logout,
+        user: {
+          email: 'demo@email.com',
+          name: 'John Doe',
+          avatarUrl:
+            'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
       }}
     >
       {children}

@@ -12,8 +12,8 @@ import '../../global.css';
 
 import { useColorScheme } from '@/src/hooks/useColorScheme';
 import { AuthProvider } from '../context/AuthContext';
+import { CartProvider } from '../context/CartContext';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -34,22 +34,36 @@ export default function RootLayout() {
 
   return (
     <AuthProvider>
-      <Stack>
-        <Stack.Screen name="home" />
+      <CartProvider>
+        <Stack>
+          <Stack.Screen
+            name="(drawer)"
+            options={{ headerShown: false, headerTitle: 'Home' }}
+          />
+          <Stack.Screen
+            name="(protected)"
+            options={{
+              headerShown: true,
+              headerTitle: 'My Profile',
+              headerTitleStyle: { fontFamily: 'SpaceMono' },
+              headerStyle: { backgroundColor: '#bababa' },
+              headerTintColor: '#fff',
+            }}
+          />
 
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="(auth)"
+            options={{
+              headerShown: true,
+              headerTitle: '',
+            }}
+          />
+
+          {/* 
         <Stack.Screen name="+not-found" />
-        <Stack.Screen
-          name="(protected)"
-          options={{
-            headerShown: true,
-            headerTitle: 'Protected',
-            headerTitleStyle: { fontFamily: 'SpaceMono' },
-            headerStyle: { backgroundColor: '#f4511e' },
-            headerTintColor: '#fff',
-          }}
-        />
-      </Stack>
+        \*/}
+        </Stack>
+      </CartProvider>
     </AuthProvider>
   );
 }

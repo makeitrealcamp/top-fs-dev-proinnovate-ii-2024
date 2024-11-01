@@ -1,6 +1,6 @@
-import { Link } from 'expo-router';
+
 import axios from 'axios';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams, Link } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Image, Text, View } from 'react-native';
 import { Product } from '~/types/Product';
@@ -15,7 +15,6 @@ export const ProductDetail = () => {
       .get(`https://fakestoreapi.com/products/${id}`)
       .then((res) => {
         setProduct(res.data);
-        console.log({ product: res.data });
       })
       .then((err: unknown) => {
         setError(err?.message);
