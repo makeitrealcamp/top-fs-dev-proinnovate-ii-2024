@@ -69,6 +69,7 @@ const ProductDetail = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
+        
         <View>
           <Animated.Image
             entering={FadeInDown.delay(100)}

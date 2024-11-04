@@ -11,10 +11,14 @@ import {
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { Stack, useLocalSearchParams } from 'expo-router';
+import { Asset, useAssets } from 'expo-asset';
 
 const EditProfile = () => {
   const { name, email, avatarUrl } = useLocalSearchParams();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [assets, error] = useAssets([
+    require('../../../assets/images/avatar.png'),
+  ]);
 
   const pickImage = async () => {
     const permissionResult =
@@ -29,14 +33,17 @@ const EditProfile = () => {
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [4, 3],
-      quality: 1,
+      quality: 0.2,
     });
 
     if (!result.canceled) {
+      console.log(result);
       setSelectedImage(result.assets[0].uri);
     }
   };
 
+  // // console.log({selectedImage, avatarUrl, assets});
+  // console.log(selectedImage);
   return (
     <View style={styles.container}>
       <Stack.Screen
@@ -53,7 +60,13 @@ const EditProfile = () => {
       />
       <View style={styles.profilePictureContainer}>
         <Image
-          source={{ uri: avatarUrl || selectedImage ||  require('../../assets/images/avatar.png')}}
+          source={{
+            uri:
+              (selectedImage as string) ||
+              (avatarUrl as string) ||
+              (assets && assets[0]?.localUri) ||
+              '',
+          }}
           style={styles.profilePicture}
         />
       </View>
@@ -89,6 +102,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
+    backgroundColor: 'gray',
   },
   infoContainer: {
     width: '100%',

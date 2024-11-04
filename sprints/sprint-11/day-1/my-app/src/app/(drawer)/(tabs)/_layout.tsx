@@ -44,7 +44,25 @@ export default function TabLayout() {
       <Tabs.Screen
         name="draggable"
         options={{
-          href: null,
+          title: 'Draggable',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={'hand-left-outline'}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="editor"
+        options={{
+          title: 'Editor',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={'camera-outline'}
+              color={color}
+            />
+          ),
         }}
       />
     </Tabs>
