@@ -13,6 +13,7 @@ import '../../global.css';
 import { useColorScheme } from '@/src/hooks/useColorScheme';
 import { AuthProvider } from '../context/AuthContext';
 import { CartProvider } from '../context/CartContext';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,6 +36,7 @@ export default function RootLayout() {
   return (
     <AuthProvider>
       <CartProvider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
         <Stack>
           <Stack.Screen
             name="(drawer)"
@@ -63,6 +65,7 @@ export default function RootLayout() {
         <Stack.Screen name="+not-found" />
         \*/}
         </Stack>
+        </GestureHandlerRootView>
       </CartProvider>
     </AuthProvider>
   );

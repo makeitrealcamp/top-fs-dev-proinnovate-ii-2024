@@ -41,12 +41,12 @@ export default function TabLayout() {
         }}
       />
 
-      {/* <Tabs.Screen
-        name="(products)"
+      <Tabs.Screen
+        name="draggable"
         options={{
           href: null,
         }}
-      /> */}
+      />
     </Tabs>
   );
 }
