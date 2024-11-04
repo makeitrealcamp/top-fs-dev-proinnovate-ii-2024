@@ -3,24 +3,26 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { useAuth } from '@/src/context/AuthContext';
 import { useRouter } from 'expo-router';
+import * as ImagePicker from 'expo-image-picker';
+
 
 export default function ProfilePage() {
   const { user } = useAuth();
   const router = useRouter();
 
   if (!user) {
-    // User is not authenticated
+
     return null;
   }
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Profile Picture */}
+
       <View style={styles.profilePictureContainer}>
         <Image source={{ uri: user.avatarUrl }} style={styles.profilePicture} />
       </View>
 
-      {/* User Information */}
+
       <View style={styles.infoContainer}>
         <Text style={styles.label}>Name</Text>
         <Text style={styles.value}>{user.name}</Text>
@@ -28,16 +30,15 @@ export default function ProfilePage() {
         <Text style={styles.label}>Email</Text>
         <Text style={styles.value}>{user.email}</Text>
 
-        {/* Add more fields as needed */}
       </View>
 
       {/* Edit Profile Button */}
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          // Navigate to Edit Profile page (to be implemented)
-          // router.push('/edit-profile');
-          alert('Edit Profile feature coming soon!');
+
+          router.push(`/editProfile?user=${user.name}&email=${user.email}&avatar=${user.avatarUrl}`,);
+          // alert('Edit Profile feature coming soon!');
         }}
       >
         <Text style={styles.buttonText}>Edit Profile</Text>
