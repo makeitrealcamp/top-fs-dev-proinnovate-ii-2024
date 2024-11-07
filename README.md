@@ -68,11 +68,11 @@ Online Masterclass with the main mentor
 
 You must present and pass the following missions:
 
-1. CV Assessment.
-2. Github Assessment.
-3. Pair Project.
-4. Group Project.
-5. Individual Project.
+1. Successful approval of the group project (submission deadline: November 26, 2024)
+2. Successful approval of the individual or paired project (submission deadline: December 10, 2024)
+3. Successful approval of the CV assessment (submission deadline: December 20, 2024)
+4. Successful approval of the LinkedIn Profile assessment (submission deadline: December 20, 2024)
+5. Successful approval of the GitHub Profile assessment (submission deadline: December 20, 2024)
 
 The guidelines for the individual and group projects are as follows:
 
