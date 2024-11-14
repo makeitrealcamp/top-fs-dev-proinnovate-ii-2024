@@ -1,5 +1,3 @@
-
-
 const CACHE_STATIC = 'cache-v1';
 const CACHE_DYNAMIC = 'dynamic-v1';
 const urlsToCache = [
@@ -16,7 +14,7 @@ self.addEventListener('install', function (event) {
     caches.open(CACHE_STATIC).then(async function (cache) {
       // await cache.addAll(urlsToCache);
       return Promise.all(
-        urlsToCache.map(async function(url) {
+        urlsToCache.map(async function (url) {
           try {
             return await cache.add(url);
           } catch (error) {
@@ -31,12 +29,10 @@ self.addEventListener('install', function (event) {
 self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request).then(function (response) {
-      // Return cached response if available
       if (response) {
         return response;
       }
 
-      // Fetch from network and cache dynamically
       return fetch(event.request)
         .then(function (fetchResponse) {
           return caches.open(CACHE_DYNAMIC).then(function (cache) {
@@ -45,7 +41,6 @@ self.addEventListener('fetch', function (event) {
           });
         })
         .catch(function () {
-          // Optionally return offline page for navigation requests
           if (event.request.mode === 'navigate') {
             return caches.match('/offline.html');
           }
@@ -54,10 +49,10 @@ self.addEventListener('fetch', function (event) {
   );
 });
 
-self.addEventListener("push", function(event) {
-  console.log("[Service Worker] Push Received.", event.data.text());
+self.addEventListener('push', function (event) {
+  console.log('[Service Worker] Push Received.', event.data.text());
   const options = {
-    body: "This notification was generated from a push!"
+    body: 'This notification was generated from a push!',
   };
-  event.waitUntil(self.registration.showNotification("Hello world!", options));
+  event.waitUntil(self.registration.showNotification('Hello world!', options));
 });
