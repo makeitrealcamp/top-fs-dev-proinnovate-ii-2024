@@ -1,0 +1,20 @@
+{
+  "name": "day-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-vapid-keys": "./node_modules/web-push/src/cli.js generate-vapid-keys --json > server/vapid-keys.json",
+    "start": "node --watch server/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "urlsafe-base64": "^1.0.0",
+    "web-push": "^3.6.7"
+  }
+}

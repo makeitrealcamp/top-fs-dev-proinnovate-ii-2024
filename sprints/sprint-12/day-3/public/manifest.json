@@ -1,0 +1,21 @@
+{
+    "name": "Simple TODO App",
+    "short_name": "TODO",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+      {
+        "src": "app.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "app.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  
