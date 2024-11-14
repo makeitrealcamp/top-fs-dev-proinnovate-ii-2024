@@ -61,36 +61,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const notifications = document.getElementById('notifications');
   notifications.addEventListener('click', async function () {
-    //get key
-
-    const keyResponse = await fetch(
-      'http://localhost:3000/api/subscription/key'
-    );
-    const keyBuffer = await keyResponse.arrayBuffer();
-    const key = new Uint8Array(keyBuffer);
-
     if (!swRegistration) {
+      console.error('Service Worker is not registered.');
       return;
     }
-    console.log({
-      key,
-    });
-    swRegistration.pushManager
-      .subscribe({
+  
+
+    const keyResponse = await fetch('http://localhost:3000/api/subscription/key');
+    const keyBuffer = await keyResponse.arrayBuffer();
+    const applicationServerKey = new Uint8Array(keyBuffer);
+  
+    try {
+      const subscription = await swRegistration.pushManager.subscribe({
         userVisibleOnly: true,
-        applicationServerKey: key,
-      })
-      .then(function (pushSubscription) {
-        console.log({ subscription: pushSubscription });
-        fetch('http://localhost:3000/api/subscription', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ subscription: pushSubscription }),
-        }).then(function (response) {
-          console.log({ response });
-        });
+        applicationServerKey,
       });
+  
+
+      const response = await fetch('http://localhost:3000/api/subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ subscription }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to subscribe on the server');
+      }
+  
+      console.log('User is subscribed:', subscription);
+    } catch (err) {
+      console.error('Failed to subscribe the user:', err);
+    }
   });
 });

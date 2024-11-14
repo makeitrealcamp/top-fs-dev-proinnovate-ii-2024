@@ -29,39 +29,61 @@ router.post('/subscription', function (req, res) {
 });
 
 router.post('/message', function (req, res) {
-  const payload = 'this is a test message';
-
-  // const vapidHeaders = vapidHelper.getVapidHeaders(
-  //   audience,
-  //   'mailto: example@web-push-node.org',
-  //   vapidDetails.publicKey,
-  //   vapidDetails.privateKey,
-  //   'aes128gcm'
-  // );
+  const payload = 'This is a test message';
 
   push.setVapidDetails(
     'mailto:user@example.org',
     vapidKeys.publicKey,
     vapidKeys.privateKey
   );
-  // const options = {
-  //   vapidDetails: {
-  //     subject: 'user@email.com',
-  //     publicKey: urlBase64.decode(vapidKeys.publicKey),
-  //     privateKey: urlBase64.decode(vapidKeys.privateKey),
-  //   },
-  //   headers: vapidHeaders,
-  // };
-  try {
-    push.sendNotification(subscribers[0], payload);
 
-    res.json({
-      ok: true,
-      message: 'Message sent',
+  const sendNotifications = subscribers.map(sub => {
+    return push.sendNotification(sub, payload).catch(err => {
+      console.error('Error sending notification:', err);
     });
-  } catch (error) {
-    console.log(error);
-  }
+  });
+
+  Promise.all(sendNotifications)
+    .then(() => res.json({ ok: true, message: 'Message sent' }))
+    .catch(err => {
+      console.error('Error in sending notifications:', err);
+      res.status(500).json({ error: err.message });
+    });
 });
+// router.post('/message', function (req, res) {
+//   const payload = 'this is a test message';
+
+//   // const vapidHeaders = vapidHelper.getVapidHeaders(
+//   //   audience,
+//   //   'mailto: example@web-push-node.org',
+//   //   vapidDetails.publicKey,
+//   //   vapidDetails.privateKey,
+//   //   'aes128gcm'
+//   // );
+
+//   push.setVapidDetails(
+//     'mailto:user@example.org',
+//     vapidKeys.publicKey,
+//     vapidKeys.privateKey
+//   );
+//   // const options = {
+//   //   vapidDetails: {
+//   //     subject: 'user@email.com',
+//   //     publicKey: urlBase64.decode(vapidKeys.publicKey),
+//   //     privateKey: urlBase64.decode(vapidKeys.privateKey),
+//   //   },
+//   //   headers: vapidHeaders,
+//   // };
+//   try {
+//     push.sendNotification(subscribers[0], payload);
+
+//     res.json({
+//       ok: true,
+//       message: 'Message sent',
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
 module.exports = router;

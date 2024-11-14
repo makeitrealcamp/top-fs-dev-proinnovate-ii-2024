@@ -1,60 +1,63 @@
-importScripts('./localDb.js');
+
 
 const CACHE_STATIC = 'cache-v1';
 const CACHE_DYNAMIC = 'dynamic-v1';
 const urlsToCache = [
   '/',
-  '/day-3/public/index.html',
-  '/day-3/public/styles.css',
-  '/day-3/public/app.js',
-  '/day-3/public/app.png',
-  '/day-3/public/offline.html',
+  '/public/index.html',
+  '/public/styles.css',
+  '/public/app.js',
+  '/public/app.png',
+  '/public/offline.html',
 ];
-
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(CACHE_STATIC).then(async function (cache) {
-      await cache.addAll(urlsToCache);
-      // return Promise.all(
-      //   urlsToCache.map(async function(url) {
-      //     try {
-      //       return await cache.add(url);
-      //     } catch (error) {
-      //       console.error('Failed to cache:', url, error);
-      //     }
-      //   })
-      // );
+      // await cache.addAll(urlsToCache);
+      return Promise.all(
+        urlsToCache.map(async function(url) {
+          try {
+            return await cache.add(url);
+          } catch (error) {
+            console.error('Failed to cache:', url, error);
+          }
+        })
+      );
     })
   );
 });
+
 self.addEventListener('fetch', function (event) {
-  const cacheResponse = async () => {
-    try {
-      const cache = await caches.open(CACHE_STATIC);
-      const cachedResponse = await cache.match(event.request);
-      console.log(cachedResponse);
-      return cachedResponse || handleAPIrequest(event.request);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  try {
-    event.respondWith(event.request);
-  } catch (error) {
-    console.log(error);
-  }
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      // Return cached response if available
+      if (response) {
+        return response;
+      }
+
+      // Fetch from network and cache dynamically
+      return fetch(event.request)
+        .then(function (fetchResponse) {
+          return caches.open(CACHE_DYNAMIC).then(function (cache) {
+            cache.put(event.request.url, fetchResponse.clone());
+            return fetchResponse;
+          });
+        })
+        .catch(function () {
+          // Optionally return offline page for navigation requests
+          if (event.request.mode === 'navigate') {
+            return caches.match('/offline.html');
+          }
+        });
+    })
+  );
 });
 
-// self.addEventListener('fetch', (event) => {
-//   console.log(event.request.url);
-//   if (event.request.url.endsWith('.css')) {
-//     event.respondWith(fetch(event.request));
-//     // event.respondWith(new Response('', {
-//     //   status: 200,
-//     //   statusText: 'css intercepted',
-//     // }));
-//   } else {
-//     event.respondWith(fetch(event.request));
-//   }
-// });
+self.addEventListener("push", function(event) {
+  console.log("[Service Worker] Push Received.", event.data.text());
+  const options = {
+    body: "This notification was generated from a push!"
+  };
+  event.waitUntil(self.registration.showNotification("Hello world!", options));
+});
