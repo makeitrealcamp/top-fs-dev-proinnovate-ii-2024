@@ -103,7 +103,10 @@
    - **Example:**
      ```javascript
      const config = (function() { 
-     // Your implementation here
+        return {
+            color: "blue",
+            fontSize: "14px"
+        }
      })();
 
      console.log(config.getConfig()); // Output: { color: 'blue', fontSize: '14px' }
@@ -115,14 +118,25 @@
    - **Objective:** Use an IIFE to create a private variable that is accessible only through specific getter and setter methods.
    - **Example:**
      ```javascript
-     const module = (function() {
-         // Your implementation here
-     })();
+     const module = (function () {
+      let variable = 0;
+      function getVar() {
+        return variable;
+      }
+      function setVar(val) {
+        variable = val;
+      }
+    
+      return {
+        getVar,
+        setVar,
+      };
+        })();
 
-     console.log(module.getVar()); // Output: 0
-     module.setVar(42);
-     console.log(module.getVar());
-     console.log(module.getVar()); // Output: 42 
+        console.log(module.getVar()); // Output: 0
+        module.setVar(42);
+        console.log(module.getVar());
+        console.log(module.getVar()); // Output: 42 
   ``
 
 
@@ -130,13 +144,19 @@
    - **Objective:** Implement a Singleton pattern using an IIFE to ensure only one instance of an object is created.
    - **Example:**
      ```javascript
-     const singleton = (function() {
-        // Your implementation here
-     })();
+     const singleton = (function () {
+        function getInstance() {
+            return this;
+        }
 
-     const obj1 = singleton.getInstance();
-     const obj2 = singleton.getInstance();
-     console.log(obj1 === obj2); // Output: true
+        return {
+            getInstance,
+        };
+        })();
+
+        const obj1 = singleton.getInstance();
+        const obj2 = singleton.getInstance();
+        console.log(obj1 === obj2); // Output: true
      ```
 
 3. **Module Pattern**
@@ -144,7 +164,20 @@
    - **Example:**
      ```javascript
      const myModule = (function() {
-         // Your implementation here
+        let variable = "secret";
+        function privateMethod() {
+            return "Private method";
+        }
+
+        function publicMethod() {
+            console.log("Public method");
+            console.log(privateMethod());
+            console.log(variable);
+        }
+
+        return {
+            publicMethod
+        }
      })();
 
      myModule.publicMethod();
@@ -159,7 +192,19 @@
    - **Example:**
      ```javascript
      const lazyInit = (function() {
-        // Your implementation here
+        let variable = false;
+        function initialize() {
+            console.log("Initializing...")
+            variable = true;
+        }
+
+        return () => {
+            if (!variable) {
+                initialize()
+            } else {
+                console.log("Already initialized")
+            }
+        }
      })();
 
      lazyInit(); // Output: Initializing...
@@ -171,7 +216,19 @@
    - **Example:**
      ```javascript
      const config = (function() {
-         // Your implementation here
+        let c = {}
+        function get(attr) {
+            return c[attr]
+        }
+        
+        function set(attr, val) {
+            c[attr] = val
+        }
+
+        return {
+            get,
+            set,
+        }
      })();
 
      config.set('theme', 'dark');
@@ -188,7 +245,11 @@
    - **Example:**
      ```javascript
      function createSimpleCounter() {
-         // Your implementation here
+        let count = 0;
+        return () => {
+            count += 1;
+            return count;
+        } 
      }
 
      const counter = createSimpleCounter();
@@ -201,7 +262,9 @@
    - **Example:**
      ```javascript
      function greet(name) {
-         // Your implementation here
+        return (message) => {
+            console.log(message+",", name+"!")
+        }
      }
 
      const greetJohn = greet('John');
@@ -213,7 +276,10 @@
    - **Example:**
      ```javascript
      function createMultiplier(n) {
-         // Your implementation here
+        let variable = n;
+        return (m) => {
+            return variable*m:
+        }
      }
 
      const double = createMultiplier(2);
@@ -228,7 +294,12 @@
    - **Example:**
      ```javascript
      function memoize(fn) {
-         // Your implementation here
+        let first = true;
+        let fnc = fn;
+        return (n) => {
+            if (first) {first = false; return fnc(n);}
+            return n*n;
+        }
      }
 
      const slowSquare = (n) => { 
@@ -246,7 +317,18 @@
    - **Example:**
      ```javascript
      function createCounter() {
-         // Your implementation here
+        let counter = 0;
+        function increment(){
+            counter += 1;
+            return counter;
+        }
+        function reset(){
+            counter = 0;
+        }
+        return {
+            increment,
+            reset,
+        }
      }
 
      const counter = createCounter();
@@ -261,7 +343,16 @@
    - **Example:**
      ```javascript
      function once(fn) {
-         // Your implementation here
+        const fnc = fn;
+        let executed = false;
+        return (message) => {
+            if (executed) {
+                console.log("No output");
+            } else {
+                executed = true;
+                fnc(message);
+            }
+        }
      }
 
      const logOnce = once((msg) => console.log(msg));
@@ -274,8 +365,14 @@
    - **Example:**
      ```javascript
      function curry(fn) {
-         // Your implementation here
-     }
+          return (...args) => {
+            if (args.length >= fn.length) {
+              return fn(...args);
+            } else {
+              return (...nextArgs) => curried(...args, ...nextArgs);
+            }
+          };
+        }
 
      function add(a, b, c) {
          return a + b + c;
@@ -290,8 +387,11 @@
    - **Example:**
      ```javascript
      function compose(...fns) {
-         // Your implementation here
-     }
+          return (n) => {
+            for (let i = fns.length - 1; i >= 0; i--) n = fns[i](n);
+            return n;
+          };
+        }
 
      const add1 = (x) => x + 1;
      const double = (x) => x * 2;
@@ -482,7 +582,7 @@ console.log(factorial(3)); // Output: 6 (3! = 3 * 2 * 1)
 -   **Example:**
 ```javascript
 function fibonacci(n) {
-    // Your implementation here
+    
 }
 
 console.log(fibonacci(5)); // Output: 5 (0, 1, 1, 2, 3, 5)
@@ -494,7 +594,9 @@ console.log(fibonacci(7)); // Output: 13 (0, 1, 1, 2, 3, 5, 8, 13)
 -   **Example:**
 ```javascript
 function sumArray(arr) {
-    // Your implementation here
+  const v = arr.shift();
+  if (v == undefined) return 0;
+  return v + sumArray(arr);
 }
 
 console.log(sumArray([1, 2, 3, 4])); // Output: 10
@@ -509,7 +611,17 @@ console.log(sumArray([5, 10, 15])); // Output: 30
         
 ```javascript
 function flatten(arr) {
-    // Your implementation here
+  let r = [];
+
+  for (const v of arr) {
+    if (typeof v == "number") {
+      r.push(v);
+    } else {
+      r.push.apply(r, flatten(v));
+    }
+  }
+
+  return r;
 }
 
 console.log(flatten([1, [2, [3, 4], 5], 6])); // Output: [1, 2, 3, 4, 5, 6]
